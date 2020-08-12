@@ -4,12 +4,12 @@
 - [x] Menggunakan aplikasi express sebelum nya (day-16)
 - [x] Membuat sistem registrasi
 - [x] Ketika registrasi selesai akan mengirim email
-- [ ] Menyertakan attachment welcome.pdf dalam email
+- [x] Menyertakan attachment welcome.pdf dalam email
 - [x] Menggunakan queue
 - [x] Email template
 
 ## Problem
-
+- [ ] puppeter belum bisa render gambar
 
 ## Additional Task
 - [x] Refactor Menggunakan Migrations
