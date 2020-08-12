@@ -22,6 +22,7 @@
     "nodemailer": "^6.4.11",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "puppeteer": "^5.2.1",
     "sequelize": "^6.3.4",
     "sequelize-cli": "^6.2.0"
   },

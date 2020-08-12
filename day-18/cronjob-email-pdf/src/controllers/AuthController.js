@@ -1,5 +1,8 @@
 const { author } = require("../db/models");
 const html = require("../email-template/template1")
+const sendpdf = require("../email-template/example/welcome")
+const fs = require('fs')
+const puppeteer = require('puppeteer');
 const response = {
   status: true,
   message: "Success",
@@ -26,6 +29,17 @@ class AuthController {
       profile: data.profile,
     };
 
+
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  // await page.goto('http://127.0.0.1:5500/day-18/html-to-pdf-example/example/resume3.html', {waitUntil: 'networkidle2'});
+  await page.setContent(sendpdf())
+  await page.pdf({path: './src/email-template/pdf/welcome.pdf', format: 'A4'});
+
+  await browser.close();
+})();
+
     return res.json(response);
   }
   static async sendEmail(data) {
@@ -40,15 +54,21 @@ class AuthController {
         user: "group3emaildemo@gmail.com",
         pass: "msvcp100M426",
       },
+      
     };
     transporter = await nodemailer.createTransport(configMail);
     const mail = {
       to: data.email,
       from: configMail.auth.user,
-      subject: "Bisa Amin",
+      subject: "Register Complete",
       html: html({
         username:data.username
       }),
+      attachments: [{
+        filename: 'welcome.pdf',
+        path: './src/email-template/pdf/welcome.pdf',
+        contentType: 'application/pdf'
+      }],
     };
     transporter.sendMail(mail);
     return "Sukses kirim email"
