@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const port = 3000;
 
-const rootIndex = require("./src/routes/index");
+const routerAuth = require("./src/routes/auth");
 const routerUsers = require("./src/routes/author");
 const routerPost = require("./src/routes/posts");
 const routerComment = require("./src/routes/comment");
@@ -38,7 +38,7 @@ const opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = "secret";
 
-app.use("/", rootIndex);
+app.use("/", routerAuth);
 app.use("/author", routerUsers);
 app.use("/posts", passport.authenticate("jwt"), routerPost);
 app.use("/comments", passport.authenticate("jwt"), routerComment);

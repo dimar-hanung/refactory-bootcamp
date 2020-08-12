@@ -1,34 +1,57 @@
 const { author } = require("../db/models");
-var jsonwebtoken = require("jsonwebtoken");
-var passport = require("passport");
-var JwtStrategy = require('passport-jwt').Strategy,
-  ExtractJwt = require('passport-jwt').ExtractJwt;
-var opts = {};
-opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = 'secret';
-passport.initialize();
-passport.session();
-// passport.authenticate("jwt")
-passport.use(
-    new JwtStrategy(opts, function (jwt_payload, done) {
-      // console.log("JWT New Strategy",jwt_payload.id)
-      author.findByPk(jwt_payload.id)
-        .then((user) => user ? done(null, user) : done(null, false))
-        .catch(err => done(err, false));
-    })
-  );
-  passport.serializeUser(function (user, done) {
-    // console.log("TEST Serialize :",user.id)
-    done(null, user.id);
-  });
-  passport.deserializeUser(function (id, done) {
-    // console.log("\n\nTEST DESerialize :",id)
-    author.findByPk(id)
-      .then(res => done(null, id))
-      .catch(err => done(err));
-  });
-//   
+const html = require("../email-template/template1")
+const response = {
+  status: true,
+  message: "Success",
+  data: [],
+};
 
-module.exports = passport.authenticate("jwt")
+const cron = require("node-cron");
+const nodemailer = require("nodemailer");
 
-// module.exports = AuthController
+class AuthController {
+  static async registerAuthor(req, res) {
+    const { body } = req;
+    const data = await author.build(body);
+    data
+      .save()
+      .then((res) => res)
+      .catch((err) => err);
+    const email = await AuthController.sendEmail(data)
+    response.status = data ? true : false;
+    response.message = email;
+    response.data = {
+      username: data.username,
+      email: data.email,
+      profile: data.profile,
+    };
+
+    return res.json(response);
+  }
+  static async sendEmail(data) {
+    const task = cron.schedule("01 * * * *", function () {
+      sendEmail().then(console.log("success send email"));
+    });
+    task.start();
+    let transporter;
+    const configMail = {
+      service: "gmail",
+      auth: {
+        user: "group3emaildemo@gmail.com",
+        pass: "msvcp100M426",
+      },
+    };
+    transporter = await nodemailer.createTransport(configMail);
+    const mail = {
+      to: data.email,
+      from: configMail.auth.user,
+      subject: "Bisa Amin",
+      html: html({
+        username:data.username
+      }),
+    };
+    transporter.sendMail(mail);
+    return "Sukses kirim email"
+  }
+}
+module.exports = AuthController;
