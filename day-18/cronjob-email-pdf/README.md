@@ -2,10 +2,11 @@
 
 ## Main Task
 - [x] Menggunakan aplikasi express sebelum nya (day-16)
-- [ ] Membuat sistem registrasi
-- [ ] Ketika registrasi selesai akan mengirim email + file pdf (welcome.pdf)
-- [ ] Menggunakan queue
-- [ ] Email template
+- [x] Membuat sistem registrasi
+- [x] Ketika registrasi selesai akan mengirim email
+- [ ] Menyertakan attachment welcome.pdf dalam email
+- [x] Menggunakan queue
+- [x] Email template
 
 ## Problem
 
