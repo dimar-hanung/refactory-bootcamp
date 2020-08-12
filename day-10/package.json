@@ -1,0 +1,14 @@
+{
+  "name": "redis_start",
+  "version": "1.0.0",
+  "description": "redis getting started",
+  "main": "redis.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dimarhanung",
+  "license": "ISC",
+  "dependencies": {
+    "redis": "^3.0.2"
+  }
+}

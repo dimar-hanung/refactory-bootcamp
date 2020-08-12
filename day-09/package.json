@@ -1,0 +1,17 @@
+{
+  "name": "day-9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dimarhanung",
+  "license": "ISC",
+  "dependencies": {
+    "@caporal/core": "^2.0.2",
+    "mongoose": "^5.9.26",
+    "mongoose-auto-increment": "^5.0.1",
+    "yesno": "^0.3.1"
+  }
+}

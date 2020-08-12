@@ -1,0 +1,14 @@
+{
+  "name": "promise-javascript",
+  "version": "1.0.0",
+  "description": "tugas promise javascript",
+  "main": "01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "author": "dimarhanung",
+  "license": "ISC"
+}

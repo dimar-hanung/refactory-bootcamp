@@ -1,0 +1,19 @@
+{
+  "name": "caporal-js",
+  "version": "1.0.0",
+  "description": "Refactory Submission",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dimarhanung",
+  "license": "ISC",
+  "dependencies": {
+    "@caporal/core": "^2.0.2",
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "xlsx": "^0.16.4"
+  },
+  "bin": "./hello-world.js",
+  "preferGlobal": true
+}

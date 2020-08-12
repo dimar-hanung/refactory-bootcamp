@@ -1,0 +1,24 @@
+body {
+  margin:0;
+  font-family: calibri;
+}
+
+a {
+  color: #00B7FF;
+}
+input[type="checkbox"]:checked + label{
+  background: #28a745 !important;
+}
+input[type="checkbox"]{
+  display: none;
+}
+.btn{
+  cursor: pointer;
+  margin: 0 5px;
+  /* background: #ccc; */
+  color: white
+}
+.image{
+  max-width: 200px;
+  max-height: 100px;
+}

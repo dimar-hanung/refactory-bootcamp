@@ -1,0 +1,13 @@
+extends layouts.pug
+
+block content
+
+    .col-12
+        h1 Tambah Todo
+    .col-12
+        form(action='/add' method="POST")
+            label Judul :
+            input(type='text' class="form-control mb-3" name="name")
+            label Deskripsi :
+            input(type='text' class="form-control mb-3" name="description")
+            button(type="submit" class="btn btn-primary") Kirim

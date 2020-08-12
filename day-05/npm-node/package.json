@@ -1,0 +1,18 @@
+{
+  "name": "dotenv-1",
+  "version": "1.0.0",
+  "description": "live_praktik",
+  "main": "index.js",
+  "scripts": {
+    "start": "node sum.js",
+    "test": "jest"
+  },
+  "author": "dimar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
+}

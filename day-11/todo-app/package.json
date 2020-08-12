@@ -1,0 +1,19 @@
+{
+  "name": "web-todo-app",
+  "version": "1.0.0",
+  "description": "web todo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "dimarhanung",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.27",
+    "mongoose-auto-increment": "^5.0.1",
+    "nodemon": "^2.0.4",
+    "pug": "^3.0.0"
+  }
+}

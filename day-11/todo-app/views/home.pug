@@ -1,0 +1,25 @@
+extends layouts.pug
+
+block content
+      a(href="tambah").btn.waves-effect Tambah List
+      table.table
+        tr
+            th No
+            th Judul
+            th Deskripsi
+            th Status
+            th Actions
+            
+        
+        each _,i in data
+                tr
+                td= i + 1
+                td= data[i].name
+                td= data[i].description
+                td
+                 input(id=data[i]._id type="checkbox" name="status" checked=data[i].status oninput=`cekStatus("${data[i]._id}",this.checked)`).btn
+                 label(for=data[i]._id).btn.red #{data[i].status}
+                td
+                 a(href= `delete/${data[i]._id}` ).btn.waves-effect delete
+                 span
+                 a(href= `edit/${data[i]._id}` ).btn.waves-effect edit

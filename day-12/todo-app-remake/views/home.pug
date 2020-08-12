@@ -1,0 +1,27 @@
+extends layouts.pug
+
+block content
+      a(href="/list/add").btn.btn-primary.my-3 Tambah List
+      table.table.table-sm.table-hover
+        tr
+            th No
+            th Judul
+            th Deskripsi
+            th Status
+            th Actions
+            
+        
+        each _,i in data
+                tr
+                td= i + 1
+                td= data[i].name
+                 div
+                  #{data[i].imageFile===undefined?"error":`img class="image" src="/images/uploads/${data[i].imageFile.filename}"`}
+                td= data[i].description
+                td
+                 input(id=data[i]._id type="checkbox" name="status" checked=data[i].status oninput=`cekStatus("${data[i]._id}",this.checked)`).btn
+                 label(for=data[i]._id).btn.btn-dark.btn-sm #{data[i].status?"Done":"Not Yet"}
+                td
+                 a(href= `delete/${data[i]._id}` ).btn.btn-danger.btn-sm delete
+                 span
+                 a(href= `edit/${data[i]._id}` ).btn.btn-info.btn-sm edit

@@ -1,0 +1,16 @@
+extends layouts.pug
+
+block content
+
+    .col-12
+        h1 Tambah Todo
+    .col-12
+        form(action='/list/add' method="POST" enctype="multipart/form-data")
+            label Judul :
+            input(type='text' class="form-control mb-3" name="name")
+            label Deskripsi :
+            input(type='text' class="form-control mb-3" name="description")
+            .form-group
+              label(for="exampleInputEmail1") Photo
+              input.form-control(type="file"  name="photo")
+            button(type="submit" class="btn btn-primary") Kirim

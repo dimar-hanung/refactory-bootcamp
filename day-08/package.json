@@ -1,0 +1,17 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "todo-app tugas hari ke 8",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dimarhanung",
+  "license": "ISC",
+  "dependencies": {
+    "@caporal/core": "^2.0.2",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.3",
+    "yesno": "^0.3.1"
+  }
+}

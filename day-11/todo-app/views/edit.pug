@@ -1,0 +1,13 @@
+extends layouts.pug
+
+block content
+    .col-12
+        h1 Edit #{data.name}
+    .col-12
+        form(action='/edit' method="POST")
+            label Judul :
+            input(type='text' value=data.name class="form-control mb-3" name="name")
+            label Deskripsi :
+            input(type='text' value=data.description class="form-control mb-3" name="description")
+            input(type="hidden" value=data._id name="id")
+            button(type="submit" class="btn btn-primary") Kirim

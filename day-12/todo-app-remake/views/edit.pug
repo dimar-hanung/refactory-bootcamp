@@ -1,0 +1,18 @@
+extends layouts.pug
+
+block content
+    .col-12
+        h1 Edit #{data.name}
+    .col-12
+        form(action='/list/edit' method="POST" enctype="multipart/form-data")
+            label Judul :
+            input(type='text' value=data.name class="form-control mb-3" name="name")
+            label Deskripsi :
+            input(type='text' value=data.description class="form-control mb-3" name="description")
+            input(type="hidden" value=data._id name="id")
+            .form-group
+              img(src=`/images/uploads/${data.imageFile===undefined?"error":data.imageFile.filename}`).image
+              .label
+                label(for="exampleInputEmail1") #{data.imageFile===undefined?"Tdk ada gambar":data.imageFile.originalname}
+              input.form-control(type="file" name="photo")
+            button(type="submit" class="btn btn-primary") Kirim

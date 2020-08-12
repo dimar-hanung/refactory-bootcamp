@@ -1,0 +1,15 @@
+body{
+    /* background: red; */
+}
+.btn{
+    margin-right: 5px
+}
+input[type="checkbox"]:checked + label{
+    background: #28a745 !important;
+}
+nav{
+    margin-bottom: 50px !important;
+}
+.brand-logo{
+    padding:0 10px !important;
+}
