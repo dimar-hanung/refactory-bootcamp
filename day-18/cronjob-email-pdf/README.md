@@ -11,19 +11,10 @@
 
 ## Problem
 - [ ] puppeter belum bisa render gambar
+- [ ] sepertinya cache tersimpan jadi email tidak mengirim file terbaru
 
 ## Additional Task
-- [x] Refactor Menggunakan Migrations
-- [x] Refactor Menggunakan reference
+- [ ] Menggunakan pug js supaya bisa render image
 - [ ] Menaruh method autentikasi pada controller
-- [x] Menaruh method upload pada controller
 - [ ] Menggunakan bcrypt salt
-- [x] env biar aman
-- [x] Passport Middleware
-- [x] Autentikasi menggunakan JWT
 - [ ] Update Dokumentasi Menggunakan Postman
-- [ ] route register
-- [x] route login
-- [x] Upload Image Menggunakan https://cloudinary.com/
-- [x] Upload berada di route : `localhost:3000/author/image` demgan key `image` juga
-- [x] Menggunakan middleware multer untuk mendapatkan data form multipart
