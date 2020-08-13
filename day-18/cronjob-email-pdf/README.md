@@ -7,6 +7,7 @@
 - [x] Menyertakan attachment welcome.pdf dalam email
 - [x] Menggunakan queue
 - [x] Email template
+- [ ] Email berisi nama, alamat, no telepon
 
 ## Problem
 - [ ] puppeter belum bisa render gambar
