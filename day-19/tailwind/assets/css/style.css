@@ -1,0 +1,45 @@
+*{
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+.max-content{
+    max-height: max-content;
+}
+th{
+    text-align: left;
+    vertical-align: top
+}
+.max-width-200{
+    width: 100%;
+    max-width: 100px;
+}
+.line{
+    width: 100%;
+    border-bottom: solid .5px #ccc;
+    position: relative;
+    margin: 15px 0;
+}
+.line::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #17a2b8
+}
+
+@media screen and (max-width:400px){
+    .timeline{
+        display: none
+    }
+}
+
+.hover-box{
+    transition: all ease 0.4s;
+}
+.hover-box:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px -5px black;
+}
