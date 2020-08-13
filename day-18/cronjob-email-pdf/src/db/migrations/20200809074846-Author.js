@@ -31,6 +31,15 @@ module.exports = {
       profile:{
         type:Sequelize.STRING,
       },
+      alamat:{
+        type:Sequelize.STRING,
+      },
+      phone:{
+        type:Sequelize.STRING,
+      },
+      name:{
+        type:Sequelize.STRING,
+      },
       createdAt:{
         type:Sequelize.DATE
       },

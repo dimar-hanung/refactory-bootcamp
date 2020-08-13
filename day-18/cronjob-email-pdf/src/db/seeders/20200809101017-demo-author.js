@@ -18,6 +18,9 @@ module.exports = {
     salt:'aasa3512532as',
     email: 'dimarhanung@gmail.com',
     profile:'https://i.ibb.co/3fvMkW5/image.png',
+    name:'dimar hanung prakoso',
+    alamat:'jalan baturaden',
+    phone:'08893110422',
     createdAt: new Date(),
     updatedAt: new Date()
   },
@@ -28,6 +31,9 @@ module.exports = {
     salt:'aasa3512532as',
     email: 'yogavito@gmail.com',
     profile:'https://i.ibb.co/3fvMkW5/image.png',
+    name:'dimar yoga adyatma',
+    alamat:'jalan purwokerto',
+    phone:'08893110422',
     createdAt: new Date(),
     updatedAt: new Date()
   }]);
