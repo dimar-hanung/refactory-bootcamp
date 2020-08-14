@@ -10,7 +10,8 @@ th{
 }
 .max-width-200{
     width: 100%;
-    max-width: 100px;
+    max-width: 70px;
+    font-size: 18px;
 }
 .line{
     width: 100%;
