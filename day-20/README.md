@@ -6,3 +6,4 @@
 ## additional task
 - [x] fontawesome
 - [x] local storage
+- [x] purgecss - supaya file menjadi kecil ( menghapus class tidak digunakan )
