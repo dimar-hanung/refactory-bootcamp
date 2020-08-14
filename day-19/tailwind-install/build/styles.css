@@ -18045,6 +18045,115 @@ video {
           animation: bounce 1s infinite;
 }
 
+.btn-blue {
+  --bg-opacity: 1;
+  background-color: #4299e1;
+  background-color: rgba(66, 153, 225, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #3182ce;
+  color: rgba(49, 130, 206, var(--text-opacity));
+  font-weight: 700;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  border-radius: 0.25rem;
+}
+
+.btn-blue:hover {
+  --bg-opacity: 1;
+  background-color: #2b6cb0;
+  background-color: rgba(43, 108, 176, var(--bg-opacity));
+}
+
+.nav{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem
+}
+
+.nav h1 {
+  font-size: 4rem;
+  display: inline-block;
+  padding: 0
+}
+
+.nav span {
+  --bg-opacity: 1;
+  background-color: #bee3f8;
+  background-color: rgba(190, 227, 248, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #4299e1;
+  color: rgba(66, 153, 225, var(--text-opacity));
+  padding: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 0.25rem;
+  vertical-align: top;
+  margin-top: 1.25rem;
+  margin-left: 0.75rem;
+  display: inline-block
+}
+
+.nav div {
+  --text-opacity: 1;
+  color: #a0aec0;
+  color: rgba(160, 174, 192, var(--text-opacity));
+  font-size: 1.5rem
+}
+
+.main {
+  margin-top: 2.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem
+}
+
+.main .caption{
+  font-size: 2.25rem;
+  --text-opacity: 1;
+  color: #2d3748;
+  color: rgba(45, 55, 72, var(--text-opacity));
+  margin-bottom: 2.5rem
+}
+
+/* .main .sections{
+    @apply  w-full sm:w-1/2 p-2
+} */
+
+.main .sections>h2{
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem
+}
+
+.main .sections .year{
+  display: inline-block;
+  vertical-align: top;
+  font-weight: 700;
+  --text-opacity: 1;
+  color: #63b3ed;
+  color: rgba(99, 179, 237, var(--text-opacity));
+  width: 100%;
+  max-width: 100px
+}
+
+/* .my-status>div{
+    @apply w-full sm:w-1/2
+} */
+
+.my-status>div.box{
+  --bg-opacity: 1;
+  background-color: #edf2f7;
+  background-color: rgba(237, 242, 247, var(--bg-opacity));
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.25rem;
+  margin: 0.5rem
+}
+
+.my-status>div.box sup{
+  font-size: 3rem
+}
+
 *{
   font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
@@ -18089,11 +18198,11 @@ th{
   }
 }
 
-.hover-box{
+.box{
   transition: all ease 0.4s;
 }
 
-.hover-box:hover{
+.box:hover{
   cursor: pointer;
   transform: translateY(-10px);
   box-shadow: 0 0 15px -5px black;
