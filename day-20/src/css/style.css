@@ -1,0 +1,40 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.btn-blue {
+    @apply bg-blue-500 text-blue-600 font-bold py-2 px-10 rounded text-white;
+}
+.btn-blue:hover {
+    @apply bg-blue-700;
+}
+
+.max-content {
+    width: max-content;
+  }
+  .max-400 {
+    width: 100%;
+    max-width: 400px;
+  }
+  .w-40 {
+    width: 40px;
+    text-align: center;
+  }
+  th {
+    text-align: left;
+  }
+  tbody tr {
+    /* background: #17a2b8; */
+
+    border: solid #ccc 0.5px;
+    /* height: 30px; */
+  }
+  tbody td {
+    padding: 5px 0;
+    overflow-wrap: anywhere;
+  }
+  tbody tr:hover {
+    background: #f8ffe2;
+  }

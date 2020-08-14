@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="build/styles.css" />
+    <link rel="stylesheet" href="src/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="src/css/regular.min.css" />
+    <link rel="stylesheet" href="src/css/solid.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+  </head>
+  <body>
+    <div id="app" class="container mx-auto mt-10">
+      <div class="form-group mx-auto max-content">
+        <input
+          type="text"
+          class="bg-white focus:outline-none focus:shadow-outline shadow border border-gray-300 rounded-lg py-2 px-4 appearance-none leading-normal"
+          name="todo"
+          id="todo"s
+          placeholder="Enter todo"
+          v-model="todo"
+          @keyup.enter="addTodo"
+        />
+        <button class="btn-blue" @click="addTodo()">add</button>
+      </div>
+
+      <div class="max-content max-400 mx-auto mt-5 shadow-lg">
+        <table class="table max-400" v-if="todos.length > 0">
+          <thead>
+            <tr>
+              <!-- <th scope="col">#</th> -->
+              <th scope="col" class="w-40"></th>
+              <th scope="col"></th>
+              <th scope="col" class="w-40"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(todo, index) in todos" :key="index">
+              <!-- <td scope="row">{{index}}</td> -->
+              <td>
+                <button class="mx-auto block" @click="statusTodo(index)">
+                  <i
+                    class="fas fa-check-circle text-xl"
+                    v-bind:class="{ 'text-green-600': todo.status }"
+                  ></i>
+                </button>
+              </td>
+              <td>{{todo.title}}</td>
+
+              <td>
+                <button class="mx-auto block" @click="deleteTodo(index)">
+                  <i class="fa fa-trash text-red-600" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h1 v-else>Todonya Kosong</h1>
+    </div>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data() {
+          return {
+            todos: [],
+            todo: "",
+          };
+        },
+        methods: {
+          addTodo() {
+            this.todos.push({ title: this.todo, status: false });
+          },
+          deleteTodo(index) {
+            this.todos.splice(index, 1);
+          },
+          statusTodo(index) {
+            this.todos[index].status
+              ? (this.todos[index].status = false)
+              : (this.todos[index].status = true);
+            localStorage.setItem("todos", JSON.stringify(this.todos));
+          },
+          loadLocalStorage() {
+            const ls = JSON.parse(localStorage.getItem("todos"));
+            if (ls == null) {
+              return;
+            }
+            this.todos = ls;
+          },
+        },
+        watch: {
+          todos() {
+            localStorage.setItem("todos", JSON.stringify(this.todos));
+          },
+        },
+        created() {
+          this.loadLocalStorage();
+        },
+      });
+    </script>
+  </body>
+</html>
