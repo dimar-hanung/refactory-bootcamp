@@ -23,3 +23,5 @@
 - day-16 = Autentikasi rest menggunakan JWT
 - day-17 = Team Work - Node Mailer [link-repo](https://github.com/dimar-hanung/group3-nodemailer)
 - day-18 = send email saat register (nodemailer + puppeter + node-corn)
+- day-19 = Static HTML Menggunakan Tailwindcss
+- day-20 = Vue Js + Tailwindcss Membuat Todo App
