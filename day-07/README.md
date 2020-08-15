@@ -2,10 +2,10 @@
 # Asynchronous JavaScript
 - Asynchronus : script yang lebih selesai duluan yang dijalankan
 - Syncronus : lawan Asyncronus, script akan berjalan secara berurutan dari atas kebawah
-## List File
-1. 01.js - readDir Function, untuk membaca direktori os
-2. 02.js - merge data array dari 2 api resource
-3. 03.js - refactor code ke promise
+## Main Task
+- [x] 01.js - readDir Function, untuk membaca direktori os
+- [x] 02.js - merge data array dari 2 api resource
+- [x] 03.js - refactor code ke promise
 
 ## Promises
 Promises / Janji
@@ -25,26 +25,25 @@ new Promise((resolve, reject) => {
 
 
 
-# HTTP Request
+## HTTP Request
 
-## Method yang paling sering digunakan :
+### Method yang paling sering digunakan :
 1. GET
 1. POST
 1. PUT
 1. DELETE
 
-## Cara untuk melaukan HTTP Request
+### Cara untuk melaukan HTTP Request
 dibawah ini yang ku tau aja ,sebenernya banyak
 1. XMLHttpRequest 
 2. Fetch
 3. Axios
 4. Ajax Jquery
 
-# async dan await
-## apa lagi ini
+## async dan await
 1. jadi async await itu untuk njalanin asyncronus code, bingung ya, liat di contoh filenya aja langsung
 1. ketika membuat await <b>Wajib di ikuti async</b> terlebih dahulu
-## contoh syntax
+### contoh syntax
 ```javascript
 (async ()=>{
 
