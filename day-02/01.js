@@ -11,7 +11,7 @@ console.log(palindrome("ibu ratna antar ubi"))
 // Contoh Study Case
 // menggunakan loop supaya tidak perlu memanggil fungsi secara berulang
 
-let data = [
+const data = [
     "ibu ratna antar ubi",
     "Ini bukan palindrome !!!",
     "kasur ini rusak",
