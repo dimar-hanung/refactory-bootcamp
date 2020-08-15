@@ -15,3 +15,8 @@
 - [x] 13.js - Matematika data statistik
 - [x] 14.js - Isogram adalah suatu kata tanpa ada huruf yang sama di dalam kata tersebut.
 - [x] 15.js - Convert Romawi to Decimal
+
+
+## How to run 
+1. npm install
+2. npm run test
