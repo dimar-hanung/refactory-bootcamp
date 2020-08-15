@@ -1,6 +1,6 @@
 # Functional Programming Paradigm
 Perbedaan dengan day-02, disini menggunakan paradigma pemrograman supaya code lebih efisies
->## File
+## Main Task
 - [x] 01.js - Palindrome
 - [x] 02.js - Menggabungkan Array
 - [x] 03.js - Convert CSV format ke Javascript Objek
@@ -11,10 +11,15 @@ Perbedaan dengan day-02, disini menggunakan paradigma pemrograman supaya code le
 - [x] 08.js - Bermain dengan string
 - [x] 09.js - Bermain dengan Objek
 
->## Paradigma pemrograman tuh apa sih?
-- Simple nya paradigma Itu style atau gaya kita dalam menulis program
+## Paradigma pemrograman tuh apa sih?
+Functional Programming Paradigm adalah sebuah style penulisan pada sebuah function yang menekankan pada
+komputasi didalam sebuah fungsi matematis dan menghindari perubahan data.
+1.	Hindari penggunaan variable let dan var (mutable variable)
+2.	Hindari perubahan pada sebuah array, object, map maupun set, lebih baik membuat baru.
+3.	Hindari melakukan loop pada function, contoh: total harus pakai reduce() pada sebuah Array.
 
->## Yang perlu diperhatikan untuk mengikuti paradigma FP
+
+## Yang perlu diperhatikan untuk mengikuti paradigma FP
  1. Function harus bersifat pure, dimana ia akan menerima parameter sebagai input dan mengembalikan nilai, tanpa mengubah nilai dari variabel manapun.
     Contoh Salah :
     ```javascript
