@@ -13,7 +13,8 @@ mongoose.connect("mongodb://localhost:27017/todo-app", {
   useFindAndModify:false,
   useUnifiedTopology: true,
   useCreateIndex:true
-});
+})
+.catch(err => console.log(err.message));
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // Set View engine template menjadi pug
