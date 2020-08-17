@@ -1,19 +1,20 @@
 {
-  "name": "tailwind-install",
+  "name": "day-20",
   "version": "1.0.0",
-  "description": "additional",
-  "main": "index.js",
+  "description": "",
+  "main": "postcss.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "cross-env NODE_ENV=development  postcss assets/css/style.css -o build/styles.css",
-    "build": "cross-env NODE_ENV=production postcss assets/css/style.css -o build/styles.css"
+    "build": "postcss assets/css/style.css -o build/styles.css"
   },
-  "author": "dimarhanung",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0"
+  },
   "dependencies": {
-    "autoprefixer": "^9.8.6",
     "postcss-cli": "^7.1.1",
-    "tailwindcss": "^1.6.2",
-    "cross-env": "^7.0.2"
+    "tailwindcss": "^1.6.2"
   }
 }
