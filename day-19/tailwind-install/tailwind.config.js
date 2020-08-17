@@ -4,6 +4,10 @@ module.exports = {
   theme: {
     extend: {},
   },
+  purge: {
+    enabled: true,
+    content: ['./index-grid.html'],
+  },
   variants: {},
   plugins: [
     plugin(function({ addComponents }){
