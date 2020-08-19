@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div class="panel panel-default">
+        <div class="panel-heading" style="font-weight: bold;">
+          <span class="glyphicon glyphicon-align-justify"></span> All Resources
+        </div>
+        <div class="row">
+          <div class="search-wrapper panel-heading col-sm-12">
+            <input
+              class="form-control"
+              type="text"
+              v-model="searchQuery"
+              placeholder="Search"
+            />
+          </div>
+        </div>
+        <div class="panel-body" style="max-height: 400px; overflow-y: scroll;">
+          <table v-if="resources.length" class="table">
+            <thead>
+              <tr>
+                <th>Resource</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in filteredResources">
+                <td>
+                  <a v-bind:href="item.url" target="_blank">{{item.title}}</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="src/js/data.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            searchQuery: "",
+            resources: data,
+          };
+        },
+        computed: {
+          filteredResources() {
+            if (this.searchQuery) {
+              return this.resources.filter((item) => {
+                return item.title.startsWith(this.searchQuery);
+              });
+            } else {
+              return this.resources;
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
