@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/css/tailwind.min.css" />
+    <!-- <link rel="stylesheet" href="src/css/tailwind.min.css" /> -->
+    <link rel="stylesheet" href="build/styles.css" />
     <title>Image Grid</title>
   </head>
   <body>
@@ -14,11 +15,12 @@
           type="text"
           v-model="searchQuery"
           v-on:input="filteredResources"
-          class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 my-5 block w-full appearance-none leading-normal"
+          class="input"
         />
         <div v-if="searchQuery.length>=3">
           Hasil dari pencarian
-          <span class="text-white px-2 rounded shadow bg-green-600">{{searchQuery}}</span>
+          <span class="tag bg-green-600">{{searchQuery}}</span>
+          <span class="tag bg-blue-600">{{filter.length}}</span>
         </div>
         <div v-else-if="searchQuery.length != 0 && searchQuery.length < 3">
           minimal 3 huruf
