@@ -1,5 +1,33 @@
 {
-    "files.exclude": {
-        "**/node_modules": true
-    }
+  "files.exclude": {
+    "**/node_modules": true,
+    "TO-01": true,
+    "day-01": true, // Github
+    "day-02": true, // Basic Javascript
+    "day-03": true, // OOP
+    "day-04": true, // FPP (teknik penulisan yang mencegah perubahan data)
+    "day-05": true, // Basic NPM dan bermain dengan jestjs sebagai unit test
+    "day-06": true, // Membuat CLI Menggunakan Caporal
+    "day-07": true, // Asyncrhonus dan Promise
+    "day-08": true, // RDMS ( mySQL + sequelize + Caporal )
+    "day-09": true, // noSQL ( MongoDb + Mongoose + Caporal )
+    "day-10": true, // Redis
+    "day-11": true, // Express + MongoDb + PugJs
+    "day-12": true, // ExpressGenerator + Multer
+    "day-13": true, // Api Documentation
+    "day-14": true, // Membuat RESTful dengan konsep MVC, dan mengimplementasikan api desain day-13
+    "day-15": true, // Menmabahkan Autentikasi JWT pada RESTful di day-14
+    "day-16": true, // Autentikasi rest menggunakan JWT
+    "day-17": true, // Team Work - Node Mailer (Beda Repo)
+    "day-18": true, // send email saat register (nodemailer + puppeter + node-corn)
+    "day-19": true, // Static HTML Menggunakan Tailwindcss
+    // "day-20" :true, // Vue Js + Tailwindcss Membuat Todo App
+    "day-21" :true, // Libur 17 Agustus
+    "day-22" :true, // TryOut
+    // "day-23": true // Vue Method (Computed & Watch)
+  },
+  "conventionalCommits.scopes": ["release", "auth", "task", "delete", "theory"],
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  }
 }
