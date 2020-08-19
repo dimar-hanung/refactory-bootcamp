@@ -60,3 +60,10 @@
 - day-18 = send email saat register (nodemailer + puppeter + node-corn)
 - day-19 = Static HTML Menggunakan Tailwindcss
 - day-20 = Vue Js + Tailwindcss Membuat Todo App
+## Minggu 5
+17 Agustus 2020
+- day-21 = Libur 17 Agustus
+- day-22 = TryOut
+- day-23 = Vue Method (Computed & Watch)
+- day-24 = Libur
+- day-25 = Hari kejepit (Libur)
