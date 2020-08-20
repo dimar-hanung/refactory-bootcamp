@@ -15,3 +15,12 @@
 .tag{
   @apply text-white px-2 mx-1 rounded shadow
 }
+
+.img-box{
+  @apply shadow-md block mx-auto w-full;
+  transition:all ease .3s;
+}
+.img-box:hover{
+  cursor: pointer;
+  transform: translateY(-5px);
+}
