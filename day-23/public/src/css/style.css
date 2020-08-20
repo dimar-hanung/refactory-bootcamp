@@ -1,0 +1,26 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.input{
+  @apply bg-white border border-gray-300 rounded-lg py-2 px-4 my-5 mx-auto block appearance-none leading-normal shadow-lg;
+}
+
+.input:focus{
+  @apply outline-none shadow-outline
+}
+
+.tag{
+  @apply text-white px-2 mx-1 rounded shadow
+}
+
+.img-box{
+  @apply shadow-md block mx-auto w-full;
+  transition:all ease .3s;
+}
+.img-box:hover{
+  cursor: pointer;
+  transform: translateY(-5px);
+}

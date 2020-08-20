@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="src/css/tailwind.min.css" /> -->
+    <link rel="stylesheet" href="build/styles.css" />
+    <title>Image Grid</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- {{ lists }} -->
+      <div
+        class="container mx-auto mt-10"
+        v-if="!popup"
+        style="max-width: 600px;"
+      >
+      <div class="text-center">Dimar Hanung</div>
+        <input
+          type="text"
+          v-model="searchQuery"
+          v-on:input="filteredResources"
+          class="input w-4/5 sm:w-full"
+          placeholder="Cari..."
+        />
+        <div v-if="searchQuery.length>=3">
+          Hasil dari pencarian
+          <span class="tag bg-green-600">{{searchQuery}}</span>
+          <span class="tag bg-blue-600">{{filter.length}}</span>
+        </div>
+        <div v-else-if="searchQuery.length != 0 && searchQuery.length < 3">
+          minimal 3 huruf
+        </div>
+        <hr class="my-2" />
+
+        <div v-if="loading">Loading....</div>
+        <div v-if="filter.length == 0">Tidak ada hasil ditemukan</div>
+        <div class="flex flex-wrap -mx-2">
+          <div v-for="list in filter" class="w-1/3 sm:px-2">
+            <div @click="test(list)">
+              <img
+                :src="list.thumbnailUrl"
+                class="img-box sm:rounded-lg"
+                alt=""
+              />
+            </div>
+            <div class="hidden sm:block text-center my-2">{{list.title}}</div>
+          </div>
+        </div>
+      </div>
+      <div v-else class="container mx-auto" style="max-width: 600px;">
+        <div class="p-2 text-center bg-red-600 text-white cursor-pointer" @click="popup=false">
+          Back
+        </div>
+        <img :src="item.url" class="shadow-md block mx-auto" alt="" />
+        <div>{{item.title}}</div>
+      </div>
+      <!-- <button >tes</button> -->
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="src/js/data.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+
+        data() {
+          return {
+            searchQuery: "",
+            resources: data,
+            filter: [],
+            loading: false,
+            popup: false,
+            item: "",
+          };
+        },
+
+        methods: {
+          test: function (data) {
+            this.item = data;
+            this.popup = true;
+          },
+          filteredResources: async function (e) {
+            if (this.searchQuery.length >= 3) {
+              this.loading = true;
+              // this.filter = "";
+              await this.wait(100);
+              this.filter = this.resources.filter((data) =>
+                data.title.startsWith(this.searchQuery)
+              );
+              this.loading = false;
+            } else {
+              this.loading = false;
+              this.filter = this.resources;
+            }
+          },
+          wait: async function (ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+          },
+        },
+        watch: {
+          todos() {
+            console.log("melihat");
+          },
+        },
+        created() {
+          this.filteredResources();
+        },
+      });
+    </script>
+  </body>
+</html>
