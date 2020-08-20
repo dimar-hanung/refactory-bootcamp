@@ -83,13 +83,20 @@
             this.popup = true;
           },
           filteredResources: async function (e) {
+              this.loading = true;
+              
+              
             if (this.searchQuery.length >= 3) {
+              this.filter = "";
+              await this.wait(100);
+              
               this.filter = this.resources.filter((data) =>
                 data.title.startsWith(this.searchQuery)
               );
             } else {
               this.filter = this.resources;
             }
+            this.loading = false
           },
           wait: async function (ms) {
             return new Promise((resolve) => setTimeout(resolve, ms));
