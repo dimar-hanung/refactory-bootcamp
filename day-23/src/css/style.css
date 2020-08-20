@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .input{
-  @apply bg-white border border-gray-300 rounded-lg py-2 px-4 my-5 block w-full appearance-none leading-normal;
+  @apply bg-white border border-gray-300 rounded-lg py-2 px-4 my-5 mx-auto block appearance-none leading-normal shadow-lg;
 }
 
 .input:focus{

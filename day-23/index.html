@@ -15,11 +15,13 @@
         v-if="!popup"
         style="max-width: 600px;"
       >
+      <div class="text-center">Dimar Hanung</div>
         <input
           type="text"
           v-model="searchQuery"
           v-on:input="filteredResources"
-          class="input"
+          class="input w-4/5 sm:w-full"
+          placeholder="Cari..."
         />
         <div v-if="searchQuery.length>=3">
           Hasil dari pencarian
