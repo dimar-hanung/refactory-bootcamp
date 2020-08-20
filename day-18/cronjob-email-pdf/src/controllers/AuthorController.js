@@ -24,7 +24,7 @@ class UserController {
       .then(function (data) {
         return data;
       });
-    response.data = author.filter(authorx);
+    response.data = authorx;
     response.message = "Succes get data";
 
     res.json(response);
