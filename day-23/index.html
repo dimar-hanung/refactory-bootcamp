@@ -9,8 +9,12 @@
   </head>
   <body>
     <div id="app">
-          <!-- {{ lists }} -->
-      <div class="container mx-auto mt-10" v-if="!popup" style="max-width: 600px;">
+      <!-- {{ lists }} -->
+      <div
+        class="container mx-auto mt-10"
+        v-if="!popup"
+        style="max-width: 600px;"
+      >
         <input
           type="text"
           v-model="searchQuery"
@@ -25,23 +29,29 @@
         <div v-else-if="searchQuery.length != 0 && searchQuery.length < 3">
           minimal 3 huruf
         </div>
-        <hr class="my-2"/>
+        <hr class="my-2" />
 
         <div v-if="loading">Loading....</div>
         <div class="flex flex-wrap -mx-2">
           <div v-for="list in filter" class="w-1/3 sm:px-2">
             <div @click="test(list)">
-              <img :src="list.thumbnailUrl" class="shadow-md block mx-auto sm:rounded-lg w-full" alt="" />
+              <img
+                :src="list.thumbnailUrl"
+                class="img-box sm:rounded-lg"
+                alt=""
+              />
             </div>
             <div class="hidden sm:block text-center my-2">{{list.title}}</div>
           </div>
         </div>
       </div>
-     <div v-else class="container mx-auto" style="max-width: 600px;">
-       <div class="p-2 rounded bg-red-600 text-white" @click="popup=false">Close</div>
-      <img :src="item.url" class="shadow-md block mx-auto" alt="" />
-      <div>{{item.title}}</div>
-     </div>
+      <div v-else class="container mx-auto" style="max-width: 600px;">
+        <div class="p-2 rounded bg-red-600 text-white" @click="popup=false">
+          Close
+        </div>
+        <img :src="item.url" class="shadow-md block mx-auto" alt="" />
+        <div>{{item.title}}</div>
+      </div>
       <!-- <button >tes</button> -->
     </div>
 
@@ -58,22 +68,21 @@
             resources: data,
             filter: [],
             loading: false,
-            popup:false,
-            item : ''
+            popup: false,
+            item: "",
           };
         },
 
         methods: {
-          test:function(data){
+          test: function (data) {
             this.item = data;
-            this.popup=true;
-
+            this.popup = true;
           },
           filteredResources: async function (e) {
-            this.loading = true;
-            this.filter = "";
-            await this.wait(100);
-            if (this.searchQuery.length > 3) {
+            if (this.searchQuery.length >= 3) {
+              this.loading = true;
+              this.filter = "";
+              await this.wait(100);
               this.filter = this.resources.filter((data) =>
                 data.title.startsWith(this.searchQuery)
               );
