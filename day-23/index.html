@@ -32,6 +32,7 @@
         <hr class="my-2" />
 
         <div v-if="loading">Loading....</div>
+        <div v-if="filter.length == 0">Tidak ada hasil ditemukan</div>
         <div class="flex flex-wrap -mx-2">
           <div v-for="list in filter" class="w-1/3 sm:px-2">
             <div @click="test(list)">
@@ -46,8 +47,8 @@
         </div>
       </div>
       <div v-else class="container mx-auto" style="max-width: 600px;">
-        <div class="p-2 rounded bg-red-600 text-white" @click="popup=false">
-          Close
+        <div class="p-2 text-center bg-red-600 text-white cursor-pointer" @click="popup=false">
+          Back
         </div>
         <img :src="item.url" class="shadow-md block mx-auto" alt="" />
         <div>{{item.title}}</div>
@@ -81,7 +82,7 @@
           filteredResources: async function (e) {
             if (this.searchQuery.length >= 3) {
               this.loading = true;
-              this.filter = "";
+              // this.filter = "";
               await this.wait(100);
               this.filter = this.resources.filter((data) =>
                 data.title.startsWith(this.searchQuery)
