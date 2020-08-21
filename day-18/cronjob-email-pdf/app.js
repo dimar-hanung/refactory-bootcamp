@@ -1,4 +1,5 @@
 const express = require("express");
+const passport = require('passport')
 const app = express();
 
 const bodyParser = require("body-parser");
@@ -14,6 +15,16 @@ const fileUpload = require("express-fileupload");
 
 const middle = require("./src/middleware/jwt");
 
+
+app.use(
+  require("express-session")({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 app.set('views', path.join(__dirname, './src/views'));
 app.set('view engine', 'pug');
 
@@ -23,7 +34,7 @@ app.use(
   })
 );
 app.use(bodyParser.json());
-app.use(require("body-parser").urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 
