@@ -1,70 +1,54 @@
-// Log
-// eh ada fira juga wkwkwkkw, kelasnya dimar nambah peserta wkwkwkwk
-// lebih ngerti sama kamu dim, dari pada sama mas maman ._.v
-// oh iya mas maman kenapa ga gini aja juga ya, ya aku mau nya gini juga sih tapi belum pernah coba, butuh berapa besar internetnya, kalo untuk 10 orang
-// const chalk = require("chalk");
-// console.log(chalk.red("Text in red"));
-// nah wkwk, masih gapaham , mana ada kelas :'v , ya ini praktek langsung wajar sih wwk
-// ngelag gk? , 8 orang kayaknya asik tuh wkwk , iya juga sih
-//kayaknya sama aja mas, aku pernah 8 org soalnya, lancar jaya :v, eh, engga tahu si
-//mungkin tergantung provider :v
-// btw ini harus muncul error apa boleh string doang sih? , wkwk masih ga paham aku soalnnya
-//bukannya emang string ya? sama. wkwk. btw ini sistemnya klo aku silang terminalnya, terminal dikamu
-//ikut ilang engga? uda. ga ilang? okok wkwk, ga gitu berarti sistemnya
-// coba aja belum pernah coba, engga, masih muncul terminal ku wkwk. yg ini referensi dri mana?
-//aku nemunya yg pake third party semua :(
-// aku bingunngg , iya suruh nya jangan third party, aku masih gapaham soalnya, bisa jelasin alurnya?
-// ini bener ga, kita itu bikin simulasi (System itu simulasinya) nanti ceritanya sistem error, terus nampilin pesan error, gitu bukan wkwk
-//bener. itu data lognya disimpen di lain file supaya punya data simpenan apa aja yg di log.
-//itu hasilmu uda bener lo. aku yg ga bisa itu waktu nyimpen ke file lain. bisanya pake filesaver.js yg third party.
-// ok ok, bentar aku searching duli (oke)
-// he em. third party yg kayak gitu.
-//mas diki yg nomer ini uda? eh ga ada orangnya ternyata ya? , wkwk, wa mu lg off ya? aku ngirim ss
-// fs itu file server ya?
+const fs = require("fs");
 
-
-// class System extends Log {
-//   isDataCollapse() {
-//     //
-//   }
-// }
+const write = (text) => {
+  fs.appendFile("debug.log", `${text}\n`, function (err) {
+    if (err) throw err;
+    console.log("Log Saved :", text);
+  });
+};
 
 class Log {
-  info() {
-    console.log(
-      [new Date().toLocaleString()],
-      "ERROR",
-      "We can't divide any numbers by zero."
-    );
+  static info(message) {
+    write(`[${new Date().toISOString()}] INFO: ${message}`);
+  }
+
+  static error(message) {
+    write(`[${new Date().toISOString()}] ERROR: ${message}`);
     return false;
   }
 
-  error() {
-    console.log(
-      [new Date().toLocaleString()],
-      "ERROR",
-      "We can't divide any numbers by zero."
-    );
-    return false;
+  static notice(message) {
+    write(`[${new Date().toISOString()}] NOTICE: ${message}`);
   }
 
-  notice() {}
+  static warning(message) {
+    write(`[${new Date().toISOString()}] WARNING: ${message}`);
+  }
 
-  warning() {}
+  static debug(message) {
+    write(`[${new Date().toISOString()}] DEBUG: ${message}`);
+  }
 
-  debug() {}
+  static alert(message) {
+    write(`[${new Date().toISOString()}] ALERT: ${message}`);
+  }
 
-  alert() {}
+  static critical(message) {
+    write(`[${new Date().toISOString()}] CRITICAL: ${message}`);
+  }
 
-  critical() {}
+  static emergency(message) {
+    write(`[${new Date().toISOString()}] EMERGENCY: ${message}`);
+  }
 
-  emergency() {}
 }
 
-// Log.error();
-  critical() {}
+Log.info("This is an information about something.");
+Log.error("We can't divide any numbers by zero.");
+Log.notice("Someone loves your status.");
+Log.warning("Insufficient funds.");
+Log.debug("This is debug message.");
+Log.alert("Achtung! Achtung!");
+Log.critical("Medic!! We've got critical damages.");
+Log.emergency("System hung. Contact system administrator immediately!");
 
-  emergency() {}
-}
-
-// Log.error();
