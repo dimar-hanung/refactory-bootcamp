@@ -1,0 +1,16 @@
+[2020-08-22T13:54:20.099Z] INFO: This is an information about something.
+[2020-08-22T13:54:20.104Z] ERROR: We can't divide any numbers by zero.
+[2020-08-22T13:54:20.105Z] NOTICE: Someone loves your status.
+[2020-08-22T13:54:20.105Z] WARNING: Insufficient funds.
+[2020-08-22T13:54:20.105Z] DEBUG: This is debug message.
+[2020-08-22T13:54:20.106Z] ALERT: Achtung! Achtung!
+[2020-08-22T13:54:20.106Z] CRITICAL: Medic!! We've got critical damages.
+[2020-08-22T13:54:20.106Z] EMERGENCY: System hung. Contact system administrator immediately!
+[2020-08-22T13:54:21.672Z] INFO: This is an information about something.
+[2020-08-22T13:54:21.674Z] ERROR: We can't divide any numbers by zero.
+[2020-08-22T13:54:21.674Z] NOTICE: Someone loves your status.
+[2020-08-22T13:54:21.674Z] WARNING: Insufficient funds.
+[2020-08-22T13:54:21.674Z] DEBUG: This is debug message.
+[2020-08-22T13:54:21.674Z] ALERT: Achtung! Achtung!
+[2020-08-22T13:54:21.674Z] CRITICAL: Medic!! We've got critical damages.
+[2020-08-22T13:54:21.675Z] EMERGENCY: System hung. Contact system administrator immediately!
