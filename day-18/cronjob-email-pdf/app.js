@@ -1,6 +1,7 @@
 const express = require("express");
 const passport = require('passport')
 const app = express();
+// const pug = require("pug")
 
 const bodyParser = require("body-parser");
 const port = 3000;
@@ -39,12 +40,23 @@ app.use(express.json());
 
 
 app.use("/", routerAuth);
+app.use(express.static("src/public"));
 app.use("/author",middle, routerUsers);
 app.use("/posts", middle, routerPost);
 app.use("/comments", middle, routerComment);
 app.get("/print",(req,res)=>{
-  res.render("welcome")
+  console.log(req.body)
+  res.render("welcome",{
+    data: {username:"dimar"}
+  })
 })
+app.post('/email/:template', function(req, res) {
+  console.log(req.body)
+  res.render(`welcome`, {
+    data: req.body        
+  })
+})
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

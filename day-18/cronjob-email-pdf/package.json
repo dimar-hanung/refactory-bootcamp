@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon app.js"
+    "start": "nodemon app.js"
   },
   "author": "dimarhanung",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.20.0",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.22.0",
     "dotenv": "^8.2.0",
@@ -23,6 +24,7 @@
     "nodemailer": "^6.4.11",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "pug": "^3.0.0",
     "puppeteer": "^5.2.1",
     "sequelize": "^6.3.4",
     "sequelize-cli": "^6.2.0"

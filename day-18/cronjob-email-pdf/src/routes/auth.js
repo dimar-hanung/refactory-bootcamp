@@ -4,7 +4,7 @@ const router = require('express').Router();
 
 
 router.post('/login', authController.login)
-router.post('/register', authController.register)
+router.post('/register', authController.registerAuthor)
 //router.get('/user', middle, authController.user)
 
 module.exports = router
