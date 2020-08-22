@@ -8,7 +8,7 @@ const response = {
 
 class UserController {
   static async getAuthor(req, res) {
-    const authorx = await author
+    const data = await author
       .findAll({
         include: [
           {
@@ -20,7 +20,7 @@ class UserController {
       .then(function (data) {
         return data;
       });
-    response.data = author.filter(authorx);
+    response.data = data;
     response.message = "Succes get data";
 
     res.json(response);
