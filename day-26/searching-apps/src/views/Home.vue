@@ -2,7 +2,6 @@
   <div class="container mx-auto" style="max-width:600px">
     <search-box v-model="searchQuery" v-on:change="filteredResources" />
     <selected-item
-      test="coba bisa ga nih"
       :data="selectedItem"
       v-model="sButton"
       v-on:click="removeItem"
@@ -10,7 +9,6 @@
     {{ loading ? "loading..." : "" }}
     <hr />
     <filtered-item
-      test="coba bisa ga nih"
       :data="filter"
       v-model="fButton"
       v-on:click="addItem"
@@ -78,6 +76,7 @@ export default {
     wait: async function(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms));
     },
+    
   },
   created() {
     this.filteredResources();
