@@ -50,10 +50,12 @@ export default {
     addItem: function() {
       this.selectedItem.push(this.fButton);
       this.filter = this.filter.filter((data) => data.id != this.fButton.id);
+      this.resources = this.resources.filter((data) => data.id != this.fButton.id);
       console.log(this.selectedItem);
       console.log(this.fButton.id);
     },
     removeItem: function() {
+      this.resources.push(this.fButton);
       this.filter.push(this.sButton);
       this.selectedItem = this.selectedItem.filter(
         (data) => data.id != this.sButton.id
@@ -68,6 +70,7 @@ export default {
         this.filter = this.resources.filter(
           (data) => data.title.indexOf(this.searchQuery) != -1
         );
+        this.filter = this.filter.filter((data) => data)
       } else {
         this.filter = this.resources;
       }
