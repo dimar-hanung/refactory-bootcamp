@@ -1,7 +1,6 @@
 # searching-apps
 ## demo
-https://dimar-vue-cli.web.app
-
+Belum tersedia
 ## Project setup
 ```
 npm install
