@@ -8,7 +8,7 @@ Belum tersedia
 - [x] price menggunakan filter
 
 ## Problem
-- [ ] alert muncul 
+- [ ] alert muncul saat mode development, tapi tidak muncul saat dibuild
 
 
 
