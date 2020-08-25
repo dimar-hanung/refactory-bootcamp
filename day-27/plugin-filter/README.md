@@ -1,6 +1,6 @@
 # searching-apps
 ## demo
-Belum tersedia
+https://dimar-vue-cli.web.app/
 
 ## Main Task
 - [x] add to list
@@ -8,7 +8,7 @@ Belum tersedia
 - [x] price menggunakan filter
 
 ## Problem
-- [ ] alert muncul saat mode development, tapi tidak muncul saat dibuild
+- [x] alert muncul saat mode development, tapi tidak muncul saat dibuild ( karena purgecss, harus di ignore dahulu )
 
 
 
