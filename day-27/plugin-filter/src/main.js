@@ -4,7 +4,7 @@ import router from "./router";
 import '@/assets/styles/index.css';
 import VueToast from 'vue-toast-notification';
 // import 'vue-toast-notification/dist/theme-default.css';
-import 'vue-toast-notification/dist/theme-sugar.css';
+import '@/assets/styles/theme-sugar.css';
 Vue.config.productionTip = false;
 
 Vue.use(VueToast);
@@ -28,5 +28,6 @@ Vue.filter('formatPrice', function (value) {
 
 new Vue({
   router,
+  VueToast,
   render: h => h(App)
 }).$mount("#app");
