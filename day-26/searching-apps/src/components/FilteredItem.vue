@@ -2,7 +2,7 @@
   <div class="mt-5">
     <h1 class="font-bold">Search Item</h1>
     <hr />
-    <div>{{ loading ? "loading..." : "" }}</div>
+    <div>{{ loading ? "loading..." : data.length>1 ? "" : "Data tidak ditemukan" }}</div>
     <div class="selected-item flex flex-wrap">
       <div
         v-for="(list, idx) in data"
@@ -22,7 +22,7 @@
           <img :src="list.thumbnailUrl" class="img-box" alt="" />
         </div>
 
-        <div class="text-center my-2">{{ trim(list.title) }}</div>
+        <div :title="list.title" class="text-center my-2">{{ trim(list.title) }}</div>
       </div>
     </div>
   </div>
