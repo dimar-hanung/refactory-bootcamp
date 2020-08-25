@@ -1,6 +1,17 @@
 # searching-apps
 ## demo
 Belum tersedia
+
+## Main Task
+- [x] add to list
+- [x] alert saat klik add list
+- [x] price menggunakan filter
+
+## Problem
+- [ ] alert muncul 
+
+
+
 ## Project setup
 ```
 npm install
