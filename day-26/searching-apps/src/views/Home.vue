@@ -6,15 +6,20 @@
       v-model="sButton"
       v-on:click="removeItem"
     />
-    {{ loading ? "loading..." : "" }}
-    <hr />
-    <filtered-item
-      :data="filter"
-      v-model="fButton"
-      v-on:click="addItem"
-    />
 
-    <!-- <img v-bind:src="logoDimar" /> -->
+    <hr />
+   
+     <div
+      class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4"
+      role="alert"
+      v-if="searchQuery.length !== 0 && searchQuery.length < 3"
+    >
+      <p class="font-bold">Peringatan</p>
+      <p>Pencarian akan berjalan setelah 3 kata.</p>
+    </div>
+     
+    <filtered-item :data="searchItem" :loading="loading" v-model="fButton" v-on:click="addItem" />
+   
   </div>
 </template>
 
@@ -39,7 +44,7 @@ export default {
     return {
       loading: "",
       resources: data,
-      filter: [],
+      searchItem: [],
       searchQuery: "",
       fButton: "",
       sButton: "",
@@ -49,37 +54,37 @@ export default {
   methods: {
     addItem: function() {
       this.selectedItem.push(this.fButton);
-      this.filter = this.filter.filter((data) => data.id != this.fButton.id);
-      this.resources = this.resources.filter((data) => data.id != this.fButton.id);
+      this.searchItem = this.searchItem.filter((data) => data.id != this.fButton.id);
+      this.resources = this.resources.filter(
+        (data) => data.id != this.fButton.id
+      );
       console.log(this.selectedItem);
       console.log(this.fButton.id);
     },
     removeItem: function() {
       this.resources.push(this.fButton);
-      this.filter.push(this.sButton);
+      this.searchItem.push(this.sButton);
       this.selectedItem = this.selectedItem.filter(
         (data) => data.id != this.sButton.id
       );
     },
     filteredResources: async function() {
-      console.log(this.searchQuery);
       this.loading = true;
       if (this.searchQuery.length >= 3) {
-        this.filter = [];
-        await this.wait(100);
-        this.filter = this.resources.filter(
+        this.searchItem = [];
+        await this.wait(1000);
+        this.searchItem = this.resources.filter(
           (data) => data.title.indexOf(this.searchQuery) != -1
         );
-        this.filter = this.filter.filter((data) => data)
+        this.searchItem = this.searchItem.filter((data) => data);
       } else {
-        this.filter = this.resources;
+        this.searchItem = this.resources;
       }
       this.loading = false;
     },
     wait: async function(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms));
     },
-    
   },
   created() {
     this.filteredResources();
