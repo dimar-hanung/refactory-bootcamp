@@ -57,12 +57,12 @@ export default {
   },
   methods: {
     addItem: function() {
-      this.$toast.success(`<b>Judul ${this.fButton.id}</b> Added to list`,{
-  position:"top-right",
-  duration:5000,
-  pauseOnHover:true
-  // all of other options may go here
-});
+      this.$toast.success(`<b>${this.fButton.id}</b> Added to list`, {
+        position: "top-right",
+        duration: 5000,
+        pauseOnHover: true,
+        // all of other options may go here
+      });
       this.selectedItem.push(this.fButton);
       this.searchItem = this.searchItem.filter(
         (data) => data.id != this.fButton.id
@@ -70,7 +70,6 @@ export default {
       this.resources = this.resources.filter(
         (data) => data.id != this.fButton.id
       );
-    
     },
     removeItem: function() {
       this.resources.push(this.fButton);

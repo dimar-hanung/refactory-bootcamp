@@ -8,7 +8,7 @@ import '@/assets/styles/theme-sugar.css';
 Vue.config.productionTip = false;
 
 Vue.use(VueToast);
-Vue.$toast.success('Profile saved.',{
+Vue.$toast.info('Selamat Datang.',{
   position:"top-right",
   duration:10000,
   pauseOnHover:true

@@ -21,8 +21,8 @@
         <div>
           <img :src="list.thumbnailUrl" class="img-box" alt="" />
         </div>
-        <div class="text-center my-2">{{ list.price | formatPrice }}</div>
-        <div :title="list.title" class="text-center my-2">{{ trim(list.title) }}</div>
+        <div class="text-left font-bold text-blue-500 pt-2">{{ list.price | formatPrice }}</div>
+        <div :title="list.title" class="text-left my-1">{{ trim(list.title) }}</div>
       </div>
     </div>
   </div>
