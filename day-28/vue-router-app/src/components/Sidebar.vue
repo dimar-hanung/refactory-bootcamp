@@ -3,11 +3,23 @@
     <div class="sidebar-box">
       <h2>Sidebar Links</h2>
       <div class="content">
-        <a href="#">Link 1</a>
+        <li>
+            <a href="#">Link 1</a>
+        </li>
+        <li>
+            <a href="#">Link 2</a>
+        </li>
+        <li>
+            <a href="#">Link 3</a>
+        </li>
+        <li>
+            <a href="#">Link 4</a>
+        </li>
+
       </div>
     </div>
     <div class="sidebar-box">
-      <h2>Sidebar Links</h2>
+      <h2>About</h2>
       <div class="content">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea veritatis
         et maiores doloremque, officia soluta cum at rem distinctio! Ab nulla

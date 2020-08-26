@@ -5,7 +5,7 @@ import "@/assets/styles/index.css";
 import posts from "@/dummy/posts.js";
 import albums from "@/dummy/albums.js";
 import photos from "@/dummy/photos.js";
-import VuePaginate from 'vue-paginate';
+import VuePaginate from "vue-paginate";
 Vue.use(VuePaginate);
 
 Vue.mixin({
@@ -14,21 +14,15 @@ Vue.mixin({
       posts: posts,
       albums: albums,
       photos: photos,
-      paginate:["postingan"]
+      paginate: ["postingan","foto"],
     };
   },
-  methods:{
-    getById(data){
-      console.log(data)
-      return data[0].filter(post => post.id == data[1])
+  methods: {
+    getById(data) {
+      console.log(data);
+      return data[0].filter((post) => post.id == data[1]);
     },
-    goToSecondPage (val) {
-      console.log(val)
-      if (this.$refs.paginator) {
-        this.$refs.paginator.goToPage(2)
-      }
-    }
-  }
+  },
 });
 
 Vue.filter("capitalize", function(words) {
@@ -38,7 +32,7 @@ Vue.filter("capitalize", function(words) {
 });
 
 Vue.filter("getById", function(data) {
-  return data[0].filter(post => post.id == data[1])
+  return data[0].filter((post) => post.id == data[1]);
 });
 
 Vue.config.productionTip = false;

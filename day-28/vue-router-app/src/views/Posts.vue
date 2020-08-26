@@ -1,7 +1,7 @@
 <template>
   <div class="about mt-10">
     <!-- <h1>This is an about x</h1> -->
-    <paginate name="postingan" :list="posts" :per="2" ref="postingan">
+    <paginate name="postingan" :list="posts" :per="10" ref="postingan">
       <div v-for="(post, i) in paginated('postingan')" :key="i">
         <div class="flex text-left">
           <img src="../assets/logo.png" alt="" />
@@ -52,7 +52,7 @@ export default {
       const params = new URLSearchParams(location.search);
       params.set("page", this.$refs.postingan.currentPage+1);
 
-      params.toString(); // => test=123&cheese=yummy
+      params.toString();
       window.history.replaceState(
         {},
         "",
@@ -61,8 +61,8 @@ export default {
     },
   },
   async created() {
-    await console.log(this.$refs);
-    if (this.$refs.postingan) {
+    await console.log(this.$route.query.page);
+    if (this.$refs.postingan ** this.$route.query.page) {
       this.$refs.postingan.goToPage(parseInt(this.$route.query.page));
     }
   },

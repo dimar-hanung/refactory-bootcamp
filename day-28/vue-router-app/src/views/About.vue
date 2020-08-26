@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <router-link to="website">website</router-link>
-    <router-link to="pendidikan">pendidikan</router-link>
+    <router-link to="/about/website">website</router-link>
+    <router-link to="/about/pendidikan">pendidikan</router-link>
      <router-view></router-view>
   </div>
 </template>
