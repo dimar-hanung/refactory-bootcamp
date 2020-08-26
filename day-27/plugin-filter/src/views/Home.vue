@@ -5,7 +5,7 @@
       :data="selectedItem"
       v-model="sButton"
       v-on:click="removeItem"
-    />
+    >Filtered Item</selected-item>
 
     <hr />
 
@@ -23,7 +23,9 @@
       :loading="loading"
       v-model="fButton"
       v-on:click="addItem"
-    />
+    >
+    Search Item
+    </filtered-item>
   </div>
 </template>
 

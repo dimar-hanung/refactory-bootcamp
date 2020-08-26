@@ -1,8 +1,12 @@
 <template>
   <div class="mt-5">
-    <h1 class="font-bold">Search Item</h1>
+    <h1 class="font-bold"><slot></slot></h1>
     <hr />
-    <div>{{ loading ? "loading..." : data.length>1 ? "" : "Data tidak ditemukan" }}</div>
+    <div>
+      {{
+        loading ? "loading..." : data.length > 1 ? "" : "Data tidak ditemukan"
+      }}
+    </div>
     <div class="selected-item flex flex-wrap">
       <div
         v-for="(list, idx) in data"
@@ -21,8 +25,12 @@
         <div>
           <img :src="list.thumbnailUrl" class="img-box" alt="" />
         </div>
-        <div class="text-left font-bold text-blue-500 pt-2">{{ list.price | formatPrice }}</div>
-        <div :title="list.title" class="text-left my-1">{{ trim(list.title) }}</div>
+        <div class="text-left font-bold text-blue-500 pt-2">
+          {{ list.price | formatPrice }}
+        </div>
+        <div :title="list.title" class="text-left my-1">
+          {{ trim(list.title) }}
+        </div>
       </div>
     </div>
   </div>
@@ -36,15 +44,15 @@ export default {
       type: Array,
       required: true,
     },
-    loading:{
-      type:Boolean
-    }
+    loading: {
+      type: Boolean,
+    },
   },
   model: {
     prop: "button",
     event: "click",
   },
-  
+
   methods: {
     addArray(data) {
       return this.$emit("click", data);
@@ -55,7 +63,7 @@ export default {
       return words;
     },
   },
-  
+
   computed: {},
 };
 </script>

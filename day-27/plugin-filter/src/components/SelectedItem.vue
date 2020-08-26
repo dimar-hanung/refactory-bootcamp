@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="font-bold mb-5">Selected Item</h1>
+    <h1 class="font-bold mb-5"><slot></slot></h1>
     <hr />
     <div v-if="data.length < 1">Tidak ada item yang dipilih</div>
     <div class="justify-between flex mt-5" v-else>
@@ -31,8 +31,10 @@
         <div>
           <img :src="list.thumbnailUrl" class="img-box" alt="" />
         </div>
-        <div class="text-center my-2">{{ list.price | formatPrice }}</div>
-        <div class="text-center my-2">{{ list.title }}</div>
+        <div class="text-left font-bold text-blue-500 pt-2">
+          {{ list.price | formatPrice }}
+        </div>
+        <div class="text-left my-2">{{ list.title }}</div>
       </div>
     </div>
   </div>
