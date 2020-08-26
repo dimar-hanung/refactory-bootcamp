@@ -1,24 +1,22 @@
 # vue-router-app
 
-## Project setup
-```
-npm install
-```
+## Main Task
+- [x] dengan setiap data, di buatkan menu, halaman list, dan detail.
+- [x] untuk halaman list, ada pagination, bisa menggunakan Array pagination
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Additional Task
+- [x] Responsive (70% done)
+- [x] Relational Page (Albums + Photos)
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Demo
+https://vue-router-dimar.web.app/
+
+## How To Run
+- npm install
+- npm run serve
+- npm run build untuk membuat mode production
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
