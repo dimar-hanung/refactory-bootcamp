@@ -5,7 +5,8 @@ import "@/assets/styles/index.css";
 import posts from "@/dummy/posts.js";
 import albums from "@/dummy/albums.js";
 import photos from "@/dummy/photos.js";
-
+import VuePaginate from 'vue-paginate';
+Vue.use(VuePaginate);
 
 Vue.mixin({
   data: function() {
@@ -13,12 +14,19 @@ Vue.mixin({
       posts: posts,
       albums: albums,
       photos: photos,
+      paginate:["postingan"]
     };
   },
   methods:{
     getById(data){
       console.log(data)
       return data[0].filter(post => post.id == data[1])
+    },
+    goToSecondPage (val) {
+      console.log(val)
+      if (this.$refs.paginator) {
+        this.$refs.paginator.goToPage(2)
+      }
     }
   }
 });
@@ -37,5 +45,6 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
+  VuePaginate,
   render: (h) => h(App),
 }).$mount("#app");
