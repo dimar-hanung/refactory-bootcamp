@@ -1,16 +1,16 @@
 # vue-router-app
 
 ## Main Task
-- [x] dengan setiap data, di buatkan menu, halaman list, dan detail.
-- [x] untuk halaman list, ada pagination, bisa menggunakan Array pagination
+- [x] untuk sidebar tiap data = buat widget(component) last article/image/album, dan article/image/album terbaru, yang nnti di lempar menggunakan named view
+- [x] untuk import di vue router menggunakan lazy loading router,
+- [x] untuk router-link, menggunakan name
+- [x] tambahkan guard auth untuk di tipe data post
 
 ## Additional Task
-- [x] Responsive (70% done)
-- [x] Relational Page (Albums + Photos)
-- [x] Nested Routes
+- Tidak ada yang spesial
 
 ## Problem
-- [ ] Photos Param pagination Bug
+- [ ] Warning dari router-view karena variable undefined
 
 ## Demo
 https://vue-router-dimar.web.app/

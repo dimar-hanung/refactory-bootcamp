@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="route!=''">
       <div class="font-bold border-b">popular {{this.$route.name}}</div>
       <div v-for="(list,index) in 10" :key="index">
 
@@ -16,9 +16,7 @@ export default {
       lists:()=> [],
     };
   },
-  props: {
-    route: Array,
-  },
+  props: ["route"],
   created() {
   
   },
