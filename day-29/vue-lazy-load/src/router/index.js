@@ -12,7 +12,7 @@ import Web from "../views/Website.vue";
 import Pendidikan from "../views/Pendidikan.vue";
 
 Vue.use(VueRouter);
-
+const isAdmin = "";
 const routes = [
   { path: "/", name: "Home", component: Home },
   {
@@ -56,6 +56,12 @@ const routes = [
         import(
           /* webpackChunkName: "albums" */ "../components/widgets/Popular.vue"
         ),
+    },
+    beforeEnter: (to, from, next) => {
+      if (to.name !== isAdmin) {
+        alert("Maap bang cuma admin yang boleh nih");
+        next({ name: "About" });
+      } else next();
     },
   },
   { path: "/posts/:id", name: "PostsId", component: Post },
