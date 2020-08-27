@@ -3,7 +3,7 @@
     <div class="banner">
       <div class="container flex mx-auto">
         <img alt="Vue logo" src="../assets/logo.png" />
-        <div class="banner-title">Selamat Datang Dimar</div>
+        <div class="banner-title">Dimar Blog</div>
       </div>
     </div>
   </div>

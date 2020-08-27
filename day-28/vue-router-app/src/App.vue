@@ -2,9 +2,9 @@
   <div id="app">
     <header-nav />
     <nav-sticky/>
-    <div class="flex mx-auto container justify-between" >
-      <router-view />
-      <sidebar-nav />
+    <div class="flex mx-auto mb-0 container justify-between" >
+      <router-view class="min-h-screen mb-10" />
+      <sidebar-nav class="min-h-screen" />
     </div>
     <footer-bot/>
   </div>

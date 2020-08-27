@@ -13,7 +13,7 @@
 </template>
 <style scoped>
 .footer{
-    @apply bg-gray-800 text-white mt-10;
+    @apply bg-gray-800 text-white;
     height: 200px;
     display: grid;
 }

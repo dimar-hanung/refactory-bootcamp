@@ -3,18 +3,20 @@
     <div class="sidebar-box">
       <h2>Sidebar Links</h2>
       <div class="content">
-        <li>
-            <a href="#">Link 1</a>
-        </li>
-        <li>
-            <a href="#">Link 2</a>
-        </li>
-        <li>
-            <a href="#">Link 3</a>
-        </li>
-        <li>
-            <a href="#">Link 4</a>
-        </li>
+        <ul>
+            <li>
+                <a href="#">Link 1</a>
+            </li>
+            <li>
+                <a href="#">Link 2</a>
+            </li>
+            <li>
+                <a href="#">Link 3</a>
+            </li>
+            <li>
+                <a href="#">Link 4</a>
+            </li>
+        </ul>
 
       </div>
     </div>
@@ -34,6 +36,7 @@
     background:#e5e5e5;
     min-width: 300px;
     width:300px;
+    height: auto;
 }
 .sidebar-box{
     @apply my-2;

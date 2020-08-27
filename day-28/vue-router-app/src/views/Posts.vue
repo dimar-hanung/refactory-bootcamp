@@ -1,6 +1,7 @@
 <template>
-  <div class="about mt-10">
-    <!-- <h1>This is an about x</h1> -->
+  <div class="posts mt-10">
+    <h1>Artikel {{tipe}}</h1>
+    
     <paginate name="postingan" :list="posts" :per="10" ref="postingan">
       <div v-for="(post, i) in paginated('postingan')" :key="i">
         <div class="flex text-left">
@@ -41,6 +42,7 @@ ul.paginate-links > li.active > a {
 <script>
 export default {
   name: "Home",
+  props:["tipe"],
   data() {
     return {
       post: [],
