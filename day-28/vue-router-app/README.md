@@ -8,6 +8,8 @@
 - [x] Responsive (70% done)
 - [x] Relational Page (Albums + Photos)
 
+## Problem
+- [ ] Photos Param pagination Bug
 
 ## Demo
 https://vue-router-dimar.web.app/
