@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+// import Home from "../views/Home.vue";
 // import About from "../views/About.vue";
 // import Albums from "../views/Albums.vue";
 import Album from "../views/Album.vue";
@@ -14,7 +14,12 @@ import Pendidikan from "../views/Pendidikan.vue";
 Vue.use(VueRouter);
 const isAdmin = "";
 const routes = [
-  { path: "/", name: "Home", component: Home },
+  {
+    path: "/",
+    name: "Home",
+    component: () =>
+      import(/* webpackChunkName: "albums" */ "../views/Home.vue"),
+  },
   {
     path: "/About",
     name: "About",
@@ -23,11 +28,13 @@ const routes = [
     children: [
       {
         path: "website",
-        component: Web,
+        component: () =>
+          import(/* webpackChunkName: "albums" */ "../views/Website.vue"),
       },
       {
         path: "pendidikan",
-        component: Pendidikan,
+        component: () =>
+          import(/* webpackChunkName: "albums" */ "../views/Pendidikan.vue"),
       },
     ],
   },
@@ -43,9 +50,24 @@ const routes = [
         ),
     },
   },
-  { path: "/albums/:id", name: "Album", component: Album },
-  { path: "/photos", name: "Photos", component: Photos },
-  { path: "/photos/:id", name: "Photo", component: Photo },
+  {
+    path: "/albums/:id",
+    name: "Album",
+    component: () =>
+      import(/* webpackChunkName: "albums" */ "../views/Album.vue"),
+  },
+  {
+    path: "/photos",
+    name: "Photos",
+    component: () =>
+      import(/* webpackChunkName: "albums" */ "../views/Photos.vue"),
+  },
+  {
+    path: "/photos/:id",
+    name: "Photo",
+    component: () =>
+      import(/* webpackChunkName: "albums" */ "../views/Photo.vue"),
+  },
   {
     path: "/posts",
     name: "Posts",
