@@ -7,7 +7,7 @@ import albums from "@/dummy/albums.js";
 import photos from "@/dummy/photos.js";
 import VuePaginate from "vue-paginate";
 Vue.use(VuePaginate);
-
+Vue.config.silent
 Vue.mixin({
   data: function() {
     return {

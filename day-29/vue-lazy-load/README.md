@@ -7,10 +7,12 @@
 - [x] tambahkan guard auth untuk di tipe data post
 
 ## Additional Task
-- Tidak ada yang spesial
+- [x] Hide Warning pada mode production
+- [x] Non aktifkan console.log pada mode production
 
 ## Problem
 - [ ] Warning dari router-view karena variable undefined
+- [ ] Error toLowerCase karena undefined variable pada saat akses nested routes
 
 ## Demo
 https://vue-router-dimar.web.app/
