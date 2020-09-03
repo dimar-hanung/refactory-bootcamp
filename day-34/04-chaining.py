@@ -24,11 +24,11 @@ class Cart():
         return self
     @property
     def totalQuantity(self):
-        total = 0
-        for i in range(len(self.data)):
-            total += self.data[i]['quantity']
+        total = sum(item['quantity'] for item in self.data)
         print("Total Seluruh Barang:",total)
         return self
+
+    # Alasan tidak menggunakan sum disini supaya tidak terjadi 2 kali loop
     @property
     def totalPrice(self):
         total = 0
@@ -38,9 +38,9 @@ class Cart():
         return self
     def checkout(self,filename,ext):
         import json
-        f = open(f"{filename}.{ext}", "w") # membuat file
-        f.write(json.dumps(self.data)) # menulis file \n = ganti baris
-        f.close() # tutup
+        f = open(f"{filename}.{ext}", "w")
+        f.write(json.dumps(self.data))
+        f.close()
 
 cart = Cart(data)
 (
@@ -57,4 +57,3 @@ cart.addItem({ 'item_id': 1, 'price': 30000, 'quantity': 3 })
     .checkout("cart","txt")
 )
 
-# assert c.kind == 'bar'
