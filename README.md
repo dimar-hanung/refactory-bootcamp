@@ -74,6 +74,7 @@
 - day-29 = vue route name, named route, lazyloading route, alias, redirect
 - day-30 = vuex
 ## Minggu 7
-- day-31 = task 1 hari vuex
-- day-32 = vuex (pembahasan task) + basic python
-- day-33 = python oop
+- day-31 = vuex
+- day-32 = task vuex 1 hari (Fullstack WMS)
+- day-33 = vuex (pembahasan task) + basic python
+- day-34 = python oop
