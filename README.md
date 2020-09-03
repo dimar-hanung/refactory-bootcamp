@@ -67,3 +67,13 @@
 - day-23 = Vue Method (Computed & Watch)
 - day-24 = Libur
 - day-25 = Hari kejepit (Libur)
+## Minggu 6
+- day-26 = Vue component, slot, props, emit, dynamic component
+- day-27 = Mixins, Custom Directives, Render Functions, Plugins, Filter
+- day-28 = vue route, dinamyc route
+- day-29 = vue route name, named route, lazyloading route, alias, redirect
+- day-30 = vuex
+## Minggu 7
+- day-31 = task 1 hari vuex
+- day-32 = vuex (pembahasan task) + basic python
+- day-33 = python oop
