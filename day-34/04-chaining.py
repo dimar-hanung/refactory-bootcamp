@@ -14,6 +14,7 @@ class Cart():
                 del self.data[i]
         return self
     def addDiscount(self,value):
+        value = int(value.split('%')[0])
         for i, val in enumerate(self.data):
             self.data[i]['price'] = self.data[i]['price'] - (self.data[i]['price'] * value / 100)
         return self
@@ -48,7 +49,7 @@ cart.addItem({ 'item_id': 1, 'price': 30000, 'quantity': 3 })
     .addItem({ 'item_id': 3, 'price': 5000, 'quantity': 2 })
     .removeItem({'item_id': 2})
     .addItem({ 'item_id': 4, 'price': 400, 'quantity': 6 })
-    .addDiscount(5)
+    .addDiscount("50%")
     .showAll()
     .totalItems
     .totalQuantity
