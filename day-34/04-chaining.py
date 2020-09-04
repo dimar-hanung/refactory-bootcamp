@@ -6,7 +6,11 @@ class Cart():
         print (self.data)
         return self
     def addItem(self,value):
-        self.data.append(value)
+        if 'quantity' in value:
+            self.data.append(value)
+        else:
+            value['quantity'] = 1
+            self.data.append(value)
         return self
     def removeItem(self,value):
         for i, val in enumerate(self.data):
@@ -47,7 +51,7 @@ cart = Cart(data)
 cart.addItem({ 'item_id': 1, 'price': 30000, 'quantity': 3 })
     .addItem({ 'item_id': 2, 'price': 10000 })              
     .addItem({ 'item_id': 3, 'price': 5000, 'quantity': 2 })
-    .removeItem({'item_id': 2})
+    .removeItem({'item_id': 3})
     .addItem({ 'item_id': 4, 'price': 400, 'quantity': 6 })
     .addDiscount("50%")
     .showAll()
