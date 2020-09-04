@@ -8,4 +8,13 @@
 ## Basic Python OOP
 
 1. Symbol `@` pada awal baris digunakan untuk dekorator class, functiod, dan method, https://stackoverflow.com/questions/6392739/what-does-the-at-symbol-do-in-python
-1. 
+1. `@property` Decorator, ketika menggunakan ini kita tidak perlu invoke lagi saat memanggil method,\
+    Sebelum :
+    ```python
+    employee.getTotalPrice()
+    ```
+    Sesudah memaikai @property:
+    ```python
+    employee.getTotalPrice
+    ```
+    https://www.tutorialsteacher.com/python/property-decorator
