@@ -2,7 +2,7 @@ import urllib.request, json
 
 def findRich(variable):
     # print(variable['salary'])
-    if (int(variable['salary']) > 1500000): 
+    if (int(variable['salary']) > 15000000): 
         return variable['first_name']
     else: 
         return
@@ -31,6 +31,7 @@ with urllib.request.urlopen("https://mul14.github.io/data/employees.json") as ur
     # print(data[0]['id'])
 
 
+
 richEmployee = filter(None,map(findRich,data))
 employeeLocation = filter(None,map(findLocation,data))
 employeeApril = filter(None,map(findMonth,data))
@@ -38,6 +39,7 @@ employeeDepart = filter(None,map(findDepart,data))
 employeeAbsent = filter(None,map(findAbsent,data))
 
 
+print(list(richEmployee))
 # print(",".join(list(richEmployee)))
 # print(",".join(list(employeeLocation)))
 # print(",".join(list(employeeApril)))
