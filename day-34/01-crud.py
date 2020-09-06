@@ -20,7 +20,7 @@ class Employee:
         self.data = data
     def create(self,value):
         value = list(value.items()) # convert ke tuple
-        value.insert(0,("id",self.data[len(self.data) - 1]["id"] + 1)) # setelah itu kan jadi array jadi bisa prepemd id
+        value.insert(0,("id",self.data[len(self.data) - 1]["id"] + 1  if len(self.data) > 0 else 1)) # setelah itu kan jadi array jadi bisa prepemd id
         self.data.append(dict(value))
         return self.data
     def delete(self,id):
@@ -39,7 +39,7 @@ class Employee:
         return self.data
 
 employee = Employee(data)
-# print(employee.create({"fullname":"ratna putri", "address":"jakarta", "salary":5000000, "phone":"099903"}))
-# print(employee.delete(2))
-# print(employee.read())
-# print(employee.update(2,{"fullname":"raisa andriana", "address":"bekasi", "salary":1000000, "phone":"9939999"}))
+print(employee.create({"fullname":"ratna putri", "address":"jakarta", "salary":5000000, "phone":"099903"}))
+print(employee.delete(2))
+print(employee.read())
+print(employee.update(2,{"fullname":"raisa andriana", "address":"bekasi", "salary":1000000, "phone":"9939999"}))
