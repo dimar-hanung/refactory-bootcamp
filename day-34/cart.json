@@ -1,5 +1,17 @@
 [
-  { "item_id": 1, "price": 28500.0, "quantity": 3 },
-  { "item_id": 3, "price": 4750.0, "quantity": 2 },
-  { "item_id": 4, "price": 380.0, "quantity": 6 }
+    {
+        "item_id": 1,
+        "price": 15000.0,
+        "quantity": 3
+    },
+    {
+        "item_id": 2,
+        "price": 5000.0,
+        "quantity": 1
+    },
+    {
+        "item_id": 4,
+        "price": 200.0,
+        "quantity": 6
+    }
 ]

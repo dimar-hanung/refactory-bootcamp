@@ -43,7 +43,7 @@ class Cart():
     def checkout(self,filename,ext):
         import json
         f = open(f"{filename}.{ext}", "w")
-        f.write(json.dumps(self.data))
+        f.write(json.dumps(self.data,indent = 4))
         f.close()
 
 cart = Cart(data)
@@ -58,6 +58,6 @@ cart.addItem({ 'item_id': 1, 'price': 30000, 'quantity': 3 })
     .totalItems
     .totalQuantity
     .totalPrice
-    .checkout("cart","txt")
+    .checkout("cart","json")
 )
 
