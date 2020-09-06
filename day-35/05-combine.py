@@ -9,8 +9,6 @@ with urllib.request.urlopen("https://jsonplaceholder.typicode.com/users") as url
 def user(id):
     return list(filter(lambda a: a['id'] == id, users))[0]
 
-
-
 for post in posts:
     post['user'] = user(post['userId'])
     print(json.dumps(post, indent=1))
