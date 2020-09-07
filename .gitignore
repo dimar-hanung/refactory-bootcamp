@@ -1,3 +1,12 @@
 node_modules/
 .env
 tmp/
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+.venv/
+pyvenv.cfg
