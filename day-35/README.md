@@ -31,9 +31,9 @@
     ```
     project\.venv\Scripts\activate
     ```
-- Membuat requrements.txt
-    1. Masuk VENV
-    2. Setelah itu tuliskan
+## Membuat requrements.txt
+1. Masuk VENV
+2. Setelah itu tuliskan
     ```
     pip3 freeze > requirements.txt
     ```
