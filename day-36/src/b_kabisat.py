@@ -1,6 +1,6 @@
   
 def isLeap(year):
-    if type(year) != int:
+    if type(year) != int or year <= 0:
         return False
     # Return true jika tahun merupakan perkalian dari
     # 4 dan bukan perkalian dari 100. 
