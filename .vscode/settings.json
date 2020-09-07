@@ -24,19 +24,19 @@
     "day-20": true, // Vue Js + Tailwindcss Membuat Todo App
     "day-21": true, // Libur 17 Agustus
     "day-22": true, // TryOut
-    "day-23": true, // Vue Method (Computed & Watch)
-    "day-24": true,
-    "day-25": true,
-    "day-26": true,
-    "day-27": true,
-    "day-28": true,
-    "day-29": true,
-    // "day-30": true,
-    // "day-31": true,
-    // "day-32": true,
-    // "day-33": true, // Python
-    // "day-34": true,
-    // "day-35": true,
+    "day-23": true, // Vue (Method, Computed & Watch)
+    "day-24": true, // Libur
+    "day-25": true, // Libur
+    "day-26": true, // Vue component, slot, props, emit, dynamic component
+    "day-27": true, // Mixins, Custom Directives, Render Functions, Plugins, Filter
+    "day-28": true, // vue route, dinamyc route
+    "day-29": true, // vue route name, named route, lazyloading route, alias, redirect
+    "day-30": true, // vuex
+    "day-31": true, // vuex
+    "day-32": true, // task vuex 1 hari (Fullstack WMS)
+    "day-33": true, // vuex (pembahasan task) + basic python
+    "day-34": true, // Python OOP
+    // "day-35": true, // Python Env
     // "day-36": true,
     // "day-37": true,
     // "day-38": true,
@@ -49,10 +49,12 @@
     "task",
     "delete",
     "theory",
-    "settings"
+    "settings",
+    "add"
   ],
   "tailwindCSS.includeLanguages": {
     "plaintext": "html"
   },
-  "css.validate": false
+  "css.validate": false,
+  "python.formatting.provider": "black"
 }

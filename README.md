@@ -82,3 +82,4 @@
 - day-32 = task vuex 1 hari (Fullstack WMS)
 - day-33 = vuex (pembahasan task) + basic python
 - day-34 = python oop
+- day-35 = python venv & functional programming
