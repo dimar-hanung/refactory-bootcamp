@@ -3,6 +3,8 @@ def rating(age):
     if type(age) == str:
         return False
     else:
+        if age >= 500:
+            raise ValueError
         if age >= 21:
             return ('DEWASA')
         elif age >= 13:
