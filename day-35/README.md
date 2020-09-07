@@ -31,7 +31,7 @@
     ```
     project\.venv\Scripts\activate
     ```
-## Membuat requrements.txt
+## Membuat requirements.txt
 1. Masuk VENV
 2. Setelah itu tuliskan
     ```
