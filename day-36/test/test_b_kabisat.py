@@ -14,6 +14,9 @@ class isLeapTest(unittest.TestCase):
     def test_2001(self):
         self.assertEqual(isLeap(2001), "Bukan kabisat")
     
+    def test_negatif(self):
+        self.assertFalse(isLeap(-3))
+
     def test_str(self):
         self.assertFalse(isLeap('string'))
 
