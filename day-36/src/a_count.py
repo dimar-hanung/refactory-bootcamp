@@ -1,5 +1,2 @@
 def countString(text):
-    if type(text) == str:
-        return len(text)
-    else:
-        return False
+   return len(text) if type(text) == str else False
