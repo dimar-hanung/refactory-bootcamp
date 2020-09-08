@@ -3,7 +3,7 @@ import click,json
 @click.group()
 def cli():
     pass
-@cli.command(name="add")
+@cli.command(name="create")
 @click.option('--gender', default=False, help='Menentukan maks panjang huruf')
 @click.option('--title', default=False, help='Menentukan maks panjang huruf')
 @click.option('--first', default=False, help='Menentukan maks panjang huruf')
@@ -16,11 +16,11 @@ def cli():
 @click.option('--phone', default=False, help='Menentukan maks panjang huruf')
 @click.option('--cell', default=False, help='Menentukan maks panjang huruf')
 
-def add(gender,title,first,last,street,city,state,postcode,email,phone,cell):
+def create(gender,title,first,last,street,city,state,postcode,email,phone,cell):
     read = open("users.json", "r").read() # membuat file
     read = list(json.loads(read))
     users = {
-    "id":len(read)
+    "id":read[len(read) - 1]["id"] + 1 if len(read) > 0 else 1,
     "gender": gender,
     "name": {
         "title": title,
@@ -37,7 +37,7 @@ def add(gender,title,first,last,street,city,state,postcode,email,phone,cell):
         "cell": cell
     }
     }
-    
+    read = list(read)
     read.append(users)
     f = open("users.json", "w")
     f.write(json.dumps(read,indent=4)) # menulis file \n = ganti baris
@@ -45,7 +45,28 @@ def add(gender,title,first,last,street,city,state,postcode,email,phone,cell):
 
 
 @cli.command(name="delete")
-@click.argument("id",type=click.INT)
+@click.argument("idx",type=click.INT)
+def delete(idx):
+    read = open("../users.json", "r").read() # membuat file
+    read = list(json.loads(read))
+    read = list(filter(lambda item: int(item['id']) != int(idx),read ))
+
+    f = open("../users.json", "w")
+    f.write(json.dumps(read,indent=4)) # menulis file \n = ganti baris
+    f.close() # tutup
+
+@cli.command(name="readid")
+@click.argument("idx",type=click.INT)
+def readid(idx):
+    read = open("../users.json", "r").read() # membuat file
+    read = list(json.loads(read))
+    read = list(filter(lambda item: int(item['id']) == int(idx),read ))
+    print(json.dumps(read,indent=4))
+
+@cli.command(name="read")
+def read():
+    read = open("../users.json", "r").read() # membuat file
+    print(read)
 
 
 
