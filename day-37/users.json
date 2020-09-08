@@ -1,0 +1,20 @@
+[
+    {
+        "gender": "male",
+        "name": {
+            "title": "mr",
+            "first": "brad",
+            "last": "gibson"
+        },
+        "location": {
+            "street": "9278 new road",
+            "city": "kilcoole",
+            "state": "waterford",
+            "postcode": "93027",
+            "email": "brad.gibson@example.com",
+            "phone": "011-962-7516",
+            "cell": "081-454-0666"
+        }
+    }
+    
+]
