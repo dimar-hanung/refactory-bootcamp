@@ -1,6 +1,6 @@
 import unittest
-import sys
-sys.path.append('../src')
+import sys,os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from d_trim import Trim
 
