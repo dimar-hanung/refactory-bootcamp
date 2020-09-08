@@ -11,4 +11,5 @@ https://github.com/dimar-hanung/refactory-bootcamp/tree/48d715a81f40075e93d623f2
 - [x] `e_convert.py` angka ke terbilang
 - [x] `f_mode` frequensi terbanyak
 
-
+## Referensi Task
+- SYS Relative Path : https://stackoverflow.com/questions/7505988/importing-from-a-relative-path-in-python
