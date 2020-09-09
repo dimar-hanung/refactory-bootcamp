@@ -1,7 +1,7 @@
 # Python
 
 ## before deadline
-https://github.com/dimar-hanung/refactory-bootcamp/tree/631132f173e52dbe82921053972548e91328940c/day-37
+https://github.com/dimar-hanung/refactory-bootcamp/tree/9d277851cadfcee62796653f2c4df74f26915e67/day-37
 ## Main Task
 - [x] `01_string.py` transform string
 - [x] `02_reduce.py` aritmatika dalam list
