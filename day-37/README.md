@@ -19,7 +19,12 @@ https://github.com/dimar-hanung/refactory-bootcamp/tree/631132f173e52dbe82921053
     - [ ] update
     - [x] delete
 
-
-```
-@click.argument("number",type=click.INT,nargs= -1)
-```
+## Click Cheat Sheets
+- Click Unlimited Arguments ( `nargs= -1` )
+    ```py
+    @click.argument("number",type=click.INT,nargs= -1)
+    ```
+- Click options dengan default
+    ```py
+    @click.option('--gender', default=False, help='STRING | Data gender')
+    ```
