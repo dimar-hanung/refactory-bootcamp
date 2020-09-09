@@ -3,12 +3,12 @@ import random
 @click.group()
 def cli():
     pass
-@cli.command(name="strrand")
+@cli.command(name="strrand",help="None | Membuat huruf acak")
 @click.option('--length', default=5, help='Menentukan maks panjang huruf')
-@click.option('--letters',default=False,is_flag=True,type=click.BOOL, help='Tanpa Huruf')
-@click.option('--uppercase',default=False,is_flag=True,type=click.BOOL, help='Mengubah ke random kapital')
-@click.option('--lowercase',default=False,is_flag=True,type=click.BOOL, help='Mengubah ke random kapital')
-@click.option('--numbers',default=False,is_flag=True,type=click.BOOL, help='Mengubah ke random kapital')
+@click.option('--letters',default=False,is_flag=True,type=click.BOOL, help='Hanya random huruf')
+@click.option('--uppercase',default=False,is_flag=True,type=click.BOOL, help='Mengubah ke random uppercase')
+@click.option('--lowercase',default=False,is_flag=True,type=click.BOOL, help='Mengubah ke random lowercase')
+@click.option('--numbers',default=False,is_flag=True,type=click.BOOL, help='Hanya random angka')
 def strrand(length,letters,numbers,uppercase,lowercase):
     char = list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
     num = list("1234567890")

@@ -5,9 +5,9 @@ import socket
 def cli():
     pass
 
-@cli.command(name="sum_prompt")
-@click.option('--num', prompt='Masukkan Angka (1) ',
-              help='The person to greet.')
+@cli.command(name="sum_prompt",help="INT | Menjumlahkan angka dari input prompt, akan berhenti ketika input prompt kosong")
+@click.option('--num', prompt='Masukkan Angka (1) ',type=click.INT,
+              help='INT | Angka yang akan dijumlahkan (prompt)')
 def sum_prompt(num):
     angka = num
     total = int(num)

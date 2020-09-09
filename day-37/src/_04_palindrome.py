@@ -5,7 +5,7 @@ from functools import reduce
 @click.group()
 def cli():
     pass
-@cli.command(name="palindrome")
+@cli.command(name="palindrome",help="STRING | mengetahi jika kalimat dibalik hasilnya sama")
 @click.argument("text",type=click.STRING)
 def palindrome(text):
     print("String:",text)
