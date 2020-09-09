@@ -20,9 +20,10 @@ def mode(number):
     print(statistics.mode(number))
 
 @cli.command(name="fmean",help="INT | ")
-@click.argument("number",nargs= -1)
+@click.argument("number",type=click.INT,nargs= -1)
 def fmean(number):
-    print(statistics.fmean(number))
+    print("fmean tidak ditemukan di dalam statistik")
+    print(dir(statistics))
 
 
 if __name__ == "__main__":
