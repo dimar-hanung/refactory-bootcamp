@@ -86,3 +86,4 @@
 ## Mingggu 8
 07 September 2020
 - day-36 = python unit test
+- day-37 = python cli

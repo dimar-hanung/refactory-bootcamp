@@ -36,9 +36,9 @@
     "day-32": true, // task vuex 1 hari (Fullstack WMS)
     "day-33": true, // vuex (pembahasan task) + basic python
     "day-34": true, // Python OOP
-    // "day-35": true, // Python Env
-    // "day-36": true,
-    // "day-37": true,
+    "day-35": true, // Python Env
+    "day-36": true, // Python Unit Test
+    // "day-37": true, // Python CLI App
     // "day-38": true,
     // "day-39": true,
     // "day-40": true
@@ -50,11 +50,22 @@
     "delete",
     "theory",
     "settings",
-    "add"
+    "add",
+    "fix"
   ],
   "tailwindCSS.includeLanguages": {
     "plaintext": "html"
   },
   "css.validate": false,
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    "./day-36",
+    "-p",
+    "*test*.py"
+  ],
+  "python.testing.pytestEnabled": false,
+  "python.testing.nosetestsEnabled": false,
+  "python.testing.unittestEnabled": true
 }
