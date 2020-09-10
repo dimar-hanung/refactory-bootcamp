@@ -1,0 +1,2 @@
+import src
+src.cli()
