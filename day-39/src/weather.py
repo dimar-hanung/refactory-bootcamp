@@ -109,6 +109,12 @@ async def forecast(city,days):
             tab = [f"{date}", f"| {i['main']['temp']}° Celcius",f" | {temperature}"]
             print('{:<15} {:<15}'.format(tab[0], tab[1]),tab[2])
 
+@cli.command(name="dailyforecast",help="STRING | Ramalan cuaca dengan satuan waktu (morning, evening, night)")
+@click.argument("city",default=False,type=click.STRING)
+@click.option('--cities', cls=OptionEatAll)
+@coro
+async def dailyforecast (city,cities):
+    print(cities,city)
 # "api.openweathermap.org/data/2.5/forecast?q=jakarta&appid=f120dbeb79569403fa900c3032616709"
     
 if __name__ == "__main__":
