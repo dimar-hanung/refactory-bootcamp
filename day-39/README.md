@@ -15,7 +15,7 @@
     - [x] Option --temp akan menampilkan suhu saat ini pada kota yang disebutkan.
 - [x] Multiple City Weather Menampilkan cuaca saat ini pada kota-kota yang disebutkan.
 - [ ] Menampilkan ramalan cuaca dalam satuan waktu dengan interval 3 jam.
-    - [ ] command forecast secara default akan menampilkan ramalan cuaca pada sebuah kota yang disebutkan dalam satu hari dengan interval waktu 3 jam dan satuan unit suhu celcius.
+    - [x] command forecast secara default akan menampilkan ramalan cuaca pada sebuah kota yang disebutkan dalam satu hari dengan interval waktu 3 jam dan satuan unit suhu celcius.
     - [ ] option --days akan menampilkan semua ramalan cuaca selama 5 hari ke depan dengan interval waktu per 3 jam dan satuan Celsius sebagai default unit. Simpan hasilnya kedalam format file .json dengan nama format [timestamp]_[city]_days.json.
 - [ ] Ramalan cuaca dengan satuan waktu (morning, evening, night)
     - [ ] Menampilkan ramalan cuaca sebuah kota selama 3 hari ke depan.

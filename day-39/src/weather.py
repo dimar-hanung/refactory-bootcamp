@@ -34,7 +34,7 @@ async def weather(city,celcius,fahrenheit,kelvin,temp,cities):
     if cities:
         print(datetime.now().strftime("%A, %B %d, %Y %H:%M:%S %p"))
         for city in cities:
-            data = json.loads(await fetcher.get(f"{base}q={city.lower()}&{token}{custom_temp[0]}"))
+            data = json.loads(await fetcher.get(f"{base}weather?q={city.lower()}&{token}{custom_temp[0]}"))
             print("----------------------------------------------")
             if data['cod'] != '404':
                 temperature = f"{data['weather'][0]['main']}, {data['weather'][0]['description']}"
@@ -49,7 +49,7 @@ async def weather(city,celcius,fahrenheit,kelvin,temp,cities):
     # print(f"started at {time.strftime('%X')}")
     
     
-    html = await fetcher.get(f"{base}q={city.lower()}&{token}{custom_temp[0]}")
+    html = await fetcher.get(f"{base}weather?q={city.lower()}&{token}{custom_temp[0]}")
     html = json.loads(html)
     if html['cod'] != "404":
         date = datetime.fromtimestamp(html['dt']).strftime("%A, %B %d, %Y %H:%M:%S %p")
@@ -77,6 +77,39 @@ async def weather(city,celcius,fahrenheit,kelvin,temp,cities):
         print(f"Kota {city} Tidak Ditemukan :D")
 
 
+@cli.command(name="forecast",help="STRING | Mencari cuaca berdasar nama kota")
+@click.argument("city",default=False,type=click.STRING)
+@click.option('--days',default=False,is_flag=True,type=click.BOOL, help='Mengambil dan menyimpan 5 hari')
+@coro
+async def forecast(city,days):
+    
 
+    if days:
+        print("processing ...")
+        data = await fetcher.get(f"{base}forecast?q={city.lower()}&{token}&units=metric")
+        print("done ...")
+        data = json.loads(data)
+        list_ = list(data['list'])
+        filename = f"{datetime.utcnow().strftime('%Y%m%dT%H%M%SZ')}_{city}.json"
+        # Menggunakan format timstamp ISO String
+        f = open(filename, "w")
+        f.write(json.dumps(list_,indent=4)) # menulis file \n = ganti baris
+        f.close() # tutup
+        print("saved into",filename)
+    else:
+        data = await fetcher.get(f"{base}forecast?q={city.lower()}&{token}&units=metric")
+        data = json.loads(data)
+        list_ = list(data['list'])
+        # print(data['list'][0]['dt_txt'].split(' ')[0].split('-')[2])
+        filterData = filter(lambda ndata: datetime.fromtimestamp(ndata['dt']).strftime("%d") == datetime.fromtimestamp(list_[0]['dt']).strftime("%d"),list_)
+        
+        for i in filterData:
+            date=datetime.fromtimestamp(i['dt']).strftime("%I:%M:%S %p")
+            temperature = f"{i['weather'][0]['main']}, {i['weather'][0]['description']}"
+            tab = [f"{date}", f"| {i['main']['temp']}° Celcius",f" | {temperature}"]
+            print('{:<15} {:<15}'.format(tab[0], tab[1]),tab[2])
+
+# "api.openweathermap.org/data/2.5/forecast?q=jakarta&appid=f120dbeb79569403fa900c3032616709"
+    
 if __name__ == "__main__":
     cli()
