@@ -87,3 +87,5 @@
 07 September 2020
 - day-36 = python unit test
 - day-37 = python cli
+- day-38 = python async
+- day-39 = Tryout Python
