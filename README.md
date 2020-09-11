@@ -89,3 +89,4 @@
 - day-37 = python cli
 - day-38 = python async
 - day-39 = Tryout Python
+- day-40 = Shell Script Basic
