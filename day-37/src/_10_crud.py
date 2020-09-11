@@ -4,17 +4,17 @@ import click,json
 def cli():
     pass
 @cli.command(name="create",help="OPTIONS | Membuat data ke users.json")
-@click.option('--gender', default=False, help='STRING | Data gender')
-@click.option('--title', default=False, help='STRING | Data title')
-@click.option('--first', default=False, help='STRING | Data nama awal')
-@click.option('--last', default=False, help='STRING | Data nama akhir')
-@click.option('--street', default=False, help='STRING | Data jalan')
-@click.option('--city', default=False, help='STRING | Data kota')
-@click.option('--state', default=False, help='STRING | Data provinsi')
-@click.option('--postcode', default=False, help='STRING | Data postcode')
-@click.option('--email', default=False, help='STRING | Data email')
-@click.option('--phone', default=False, help='STRING | Data nohp')
-@click.option('--cell', default=False, help='STRING | Data cell')
+@click.option('--gender', default=None, help='STRING | Data gender')
+@click.option('--title', default=None, help='STRING | Data title')
+@click.option('--first', default=None, help='STRING | Data nama awal')
+@click.option('--last', default=None, help='STRING | Data nama akhir')
+@click.option('--street', default=None, help='STRING | Data jalan')
+@click.option('--city', default=None, help='STRING | Data kota')
+@click.option('--state', default=None, help='STRING | Data provinsi')
+@click.option('--postcode', default=None, help='STRING | Data postcode')
+@click.option('--email', default=None, help='STRING | Data email')
+@click.option('--phone', default=None, help='STRING | Data nohp')
+@click.option('--cell', default=None, help='STRING | Data cell')
 
 def create(gender,title,first,last,street,city,state,postcode,email,phone,cell):
     read = open("users.json", "r").read() # membuat file
@@ -47,25 +47,25 @@ def create(gender,title,first,last,street,city,state,postcode,email,phone,cell):
 @cli.command(name="delete",help="INT | Delete data berdasar ID")
 @click.argument("idx",type=click.INT)
 def delete(idx):
-    read = open("../users.json", "r").read() # membuat file
+    read = open("users.json", "r").read() # membuat file
     read = list(json.loads(read))
     read = list(filter(lambda item: int(item['id']) != int(idx),read ))
 
-    f = open("../users.json", "w")
+    f = open("users.json", "w")
     f.write(json.dumps(read,indent=4)) # menulis file \n = ganti baris
     f.close() # tutup
 
 @cli.command(name="readid",help="INT | Read data berdasar ID")
 @click.argument("idx",type=click.INT)
 def readid(idx):
-    read = open("../users.json", "r").read() # membuat file
+    read = open("users.json", "r").read() # membuat file
     read = list(json.loads(read))
     read = list(filter(lambda item: int(item['id']) == int(idx),read ))
     print(json.dumps(read,indent=4))
 
 @cli.command(name="read",help="None | Read semua data")
 def read():
-    read = open("../users.json", "r").read() # membuat file
+    read = open("users.json", "r").read() # membuat file
     print(read)
 
 
