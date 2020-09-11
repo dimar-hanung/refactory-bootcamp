@@ -4,15 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="build/styles.css" />
+    <style>
+      .popup-show,.popup-hide{
+        background:#17a2b8;
+        display:grid;
+        place-items: center;
+        position: fixed;
+        width: 100%;
+        max-width: 500px;
+        height: 100%;
+        max-height: 500px;
+        border-radius: 5px;
+        box-shadow: 0 0 15px -10px black;
+        top: 50%;
+        left: 50%;
+        transform: scale(1) translate(-50%,-50%);
+        transform-origin: center;
+        transition: all ease 0.5s;
+      }
+      .popup-hide{
+        transform: scale(0) translate(50%,50%);
+      }
+      .blur-anim{
+        transition: all ease 0.4s;
+      }
+      .blur-1{
+        filter: blur(5px);
+      }
+      .blur-0{
+        filter: blur(0px);
+      }
+      .close{
+        background:#dc3435;
+        color:white;
+        cursor: pointer;
+        padding:2px 15px;
+        margin-bottom: 10px;
+        border-radius: 0 5px 0 3px;
+        place-self: end;
+      }
+
+    </style>
     <title>Image Grid</title>
   </head>
   <body>
     <div id="app">
-      <!-- {{ lists }} -->
       <div
-        class="container mx-auto mt-10"
-        v-if="!popup"
-        style="max-width: 600px;"
+        :class="`container mx-auto mt-10 blur-anim ${popup?'blur-1':'blur-0'}`"
+        style="max-width: 600px"
       >
         <div class="text-center">Dimar Hanung</div>
         <input
@@ -31,7 +70,6 @@
           minimal 3 huruf
         </div>
         <hr class="my-2" />
-
         <div v-if="loading">Loading....</div>
         <div v-if="filter.length == 0">Tidak ada hasil ditemukan</div>
         <div class="flex flex-wrap -mx-2">
@@ -47,7 +85,7 @@
           </div>
         </div>
       </div>
-      <div v-else class="container mx-auto" style="max-width: 600px;">
+      <!-- <div v-else class="container mx-auto" style="max-width: 600px">
         <div
           class="p-2 text-center bg-red-600 text-white cursor-pointer"
           @click="popup=false"
@@ -56,72 +94,15 @@
         </div>
         <img :src="item.url" class="shadow-md block mx-auto" alt="" />
         <div class="my-2 text-center">{{articleTitle}}</div>
-      </div>
-    </div>
+      </div> -->
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script> -->
+      <todo-item title="wow" :popup="popup" :item="item">
+        <div @click="popup=false" class="close">Close</div>
+      </todo-item>
+
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="src/js/data.js"></script>
-    <script>
-      const app = new Vue({
-        el: "#app",
-
-        data() {
-          return {
-            searchQuery: "",
-            resources: data,
-            filter: [],
-            loading: false,
-            popup: false,
-            item: "",
-          };
-        },
-      
-        methods: {
-          openTitle: function (data) {
-            this.item = data;
-            this.popup = true;
-          },
-          filteredResources: async function (e) {
-              this.loading = true;
-              
-              
-            if (this.searchQuery.length >= 3) {
-              this.filter = "";
-              await this.wait(100);
-              
-              this.filter = this.resources.filter((data) =>
-                data.title.startsWith(this.searchQuery)
-              );
-            } else {
-              this.filter = this.resources;
-            }
-            this.loading = false
-          },
-          wait: async function (ms) {
-            return new Promise((resolve) => setTimeout(resolve, ms));
-          },
-        },
-        computed: {
-          articleTitle() {
-            return (
-              "Judul: " +
-              this.item.title.replace(/(^\w{1})|(\s{1}\w{1})/g, (match) =>
-                match.toUpperCase()
-              )
-            );
-          },
-        },
-        watch: {
-          searchQuery: (a, b) => {
-            console.log(a);
-            console.log(b);
-          },
-        },
-        created() {
-          this.filteredResources();
-        },
-      });
-    </script>
+    <script src="src/js/main.js"></script>
   </body>
 </html>
