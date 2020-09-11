@@ -8,4 +8,4 @@
 - [x] Tailwind NPM / NodeJs
 - [x] Responsive
 - [ ] AOS
-- [ ]
+- [x] The Real CV
