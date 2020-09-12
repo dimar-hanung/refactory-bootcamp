@@ -8,5 +8,11 @@ Not Yet
 - [x] `03-save.sh` 
 - [x] `04-install-node.sh`
 ## Problem
-- [ ] Bash pada windows bermasalah, file tidak ter create dengan baik
+- [x] `03-save.sh` Bash pada windows bermasalah, file tidak ter create dengan baik \
+    solved : 2020-09-12 13:31:23
+    ### Sebab  :
+    Terdapat invalid character carriage return (^M) pada setiap baris url,\
+    ^M biasanya terlihat saat file copy dari windows
+    ### Solusi :
+    Install dos2unix pada WSL
 
