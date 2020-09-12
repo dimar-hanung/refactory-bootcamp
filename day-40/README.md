@@ -21,7 +21,7 @@ Fungsi nya sih untuk menjalankan perintah command line linux secara berantai, bi
 ### SH 
 SH (Bourne **sh**ell) adalah shell command-line interpreter untuk os berbasis UNIX sperti linux, dan merupakan bahasa pemrograman, kegunaan secara umum adalah untuk menjalankan beberapa perintah shell command-line sekaligus
 
-## BASH
+### BASH
 BASH (**B**ourne **a**gain **sh**ell) adalah superset dari sh, atau bisa kita bilang tambahan dari sh, dan BASH ini memiliki/support semua fitur yang dimiliki sh \
 untuk perbedaan lebih detail bisa dilihat di https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash
 
