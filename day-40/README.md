@@ -1,7 +1,7 @@
 # Shell Script Basic
-2020-09-12 10:17:41
 ## Before Deadline
-Not Yet
+2020-09-12 21:45:57 \
+https://github.com/dimar-hanung/refactory-bootcamp/tree/9e241a4/day-40
 ## Main Task
 - [x] `01-text-length.sh` 
 - [x] `02-response.sh`
