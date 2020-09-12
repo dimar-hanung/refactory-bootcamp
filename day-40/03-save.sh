@@ -9,7 +9,7 @@ cat $filename | while read LINE; do
     echo $LINE | cat -v
     array=(${response[@]}) # convert to array
     code=${array[-1]} # get last element (last line)
-
+    # python ex-python.py > output.txt 
     if [[ "$code" == "200" ]];then
         # body=${response[@]} # get all elements except last
         body=${array[@]::${#array[@]}-1}
