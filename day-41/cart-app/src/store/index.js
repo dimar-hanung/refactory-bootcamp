@@ -23,7 +23,7 @@ export default new Vuex.Store({
       if (cache) commit("setItems", JSON.parse(cache));
       else {
         axios
-          .get("http://jsonplaceholder.typicode.com/photos?_start=0&_limit=100")
+          .get("https://jsonplaceholder.typicode.com/photos?_start=0&_limit=100")
           .then((r) => r.data)
           .then((items) => {
             commit("setItems", items);
