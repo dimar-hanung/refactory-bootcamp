@@ -1,5 +1,8 @@
 # refactory-web-doc
 
+## Live Demo
+https://dimar-vuex-cart.web.app/
+
 ## Main Task
 - [x] Halaman Home
 - [x] Halaman Cart
@@ -8,6 +11,7 @@
 - [x] jumlah barang
 - [x] tambahkan dan hapus
 - [x] vuex
+- [x] Memisah Komponen filter dan cart list
 
 ## Additional Task
 - [x] Cache Local Storage
