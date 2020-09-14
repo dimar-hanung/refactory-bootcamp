@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.input {
+  @apply bg-white border border-gray-300 rounded-lg py-2 px-4 my-5 mx-auto block appearance-none leading-normal shadow-lg;
+}
+
+.input:focus {
+  @apply outline-none shadow-outline;
+}
+
+.img-box {
+    @apply shadow-md block mx-auto w-full;
+    transition: all ease 0.3s;
+  }
+.title{
+    @apply font-bold w-full bg-blue-500 align-middle text-white;
+    display:grid;
+    place-content:center;
+}
+
+.btn {
+    background-position: center;
+    transition: background 0.8s;
+    border-radius: 0 5px 0 0;
+  }
+  .btn:hover {
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+  }
+  .btn:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
+  }
+  
+  /* Button style */
+  button {
+    border: none;
+    /* border-radius: 5px; */
+    padding: 8px 12px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: white;
+    background-color: #2196f3;
+    box-shadow: 0 0 4px #999;
+    outline: none;
+  }
+  
