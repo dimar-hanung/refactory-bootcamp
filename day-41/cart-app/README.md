@@ -1,11 +1,14 @@
-# refactory-web-doc
-
+# vuex-cart
+## Before Deadline
+Tue Sep 15 01:16:51 2020\
+https://github.com/dimar-hanung/refactory-bootcamp/tree/73a57c343d10aa07ac9980f02c892a8d3a556985/day-41/cart-app
 ## Live Demo
 https://dimar-vuex-cart.web.app/
 
 ## Main Task
 - [x] Halaman Home
 - [x] Halaman Cart
+- [x] SearchBox
 - [x] Import Data (axios)
 - [x] FIlter / Hitung total price
 - [x] jumlah barang
@@ -17,6 +20,7 @@ https://dimar-vuex-cart.web.app/
 - [x] Cache Local Storage
 - [x] TailwindCss
 - [x] Add Random Price
+- [ ] Detail
 - [ ] Responsive
 
 ## Tailwindcss Intall
