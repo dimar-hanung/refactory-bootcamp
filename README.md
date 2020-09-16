@@ -83,10 +83,14 @@
 - day-33 = vuex (pembahasan task) + basic python
 - day-34 = python oop
 - day-35 = python venv & functional programming
-## Mingggu 8
+## Minggu 8
 07 September 2020
 - day-36 = python unit test
 - day-37 = python cli
 - day-38 = python async
 - day-39 = Tryout Python
 - day-40 = Shell Script Basic
+## Minggu 9
+24 September 2020
+- day-41 = Mengulang Vuex
+- day-42 = Docker Images
