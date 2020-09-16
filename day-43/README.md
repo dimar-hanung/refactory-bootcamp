@@ -1,12 +1,12 @@
 # Docker Network
 ## Main Task
-- [ ] buat container untuk mysql server
-- [ ] Buat container untuk Backend - simple wms
-- [ ] Buat container untuk frontend vuex yang temen-temen buat sendiri/ task TO part 2
-- [ ] buat docker network tiap container
-- [ ] kirim link repo project BE yang sudah include dockerfile dan dockerhub link
+- [x] buat container untuk mysql server
+- [x] Buat container untuk Backend - simple wms
+- [x] Buat container untuk frontend vuex yang temen-temen buat sendiri/ task TO part 2
+- [x] buat docker network tiap container
+- [x] kirim link repo project BE yang sudah include dockerfile dan dockerhub link
 - [ ] submit dockerfile untuk container database ke github dan buat docker hubnya
-- [ ] kirim link repo project FE yang sudah include dockerfile dan dockerhub link
+- [x] kirim link repo project FE yang sudah include dockerfile dan dockerhub link
 
 ## Problem 
 - [ ] no space left
