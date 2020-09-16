@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        table {
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        </style>
+    </head>
+    <body>
+        <div style="width: 85%; margin: 0 7.5%;">
+            <div style="text-align: center; padding-left: 50px;">            
+                <h3><%= data.name %></h3>
+                <h4>Month: <%= data.month %></h4>
+                <% if (!data.type) { %>
+                <table>
+                <tr>
+                    <th>Number</th>
+                    <th>Product Name</th>
+                    <th>Date (YYYY-MM-DD)</th>
+                    <th>Total</th>
+                </tr>
+                    <% for (let i = 0; i < data.count; i++) { %>
+                        <tr>
+                            <td><%= i + 1 %></td>
+                            <td><%= data.rows[i].Product["name"] %></td>
+                            <td><%= data.rows[i].date.getFullYear() + '-' + (data.rows[i].date.getMonth() + 1) + '-' + data.rows[i].date.getDate() %></td>
+                            <td><%= data.rows[i].total %></td>
+                        </tr>
+                    <% } %>
+                </table>
+                <% } %>
+                <% if (data.type == "all") { %>
+                    <h3>Product In Report</h4>
+                    <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Product Name</th>
+                        <th>Date (YYYY-MM-DD)</th>
+                        <th>Total</th>
+                    </tr>
+                    <% for (let i = 0; i < data.count_in; i++) { %>
+                        <tr>
+                            <td><%= data.rows_in[i].id %></td>
+                            <td><%= data.rows_in[i].Product["name"] %></td>
+                            <td><%= data.rows_in[i].date.getFullYear() + '-' + (data.rows_in[i].date.getMonth() + 1) + '-' + data.rows_in[i].date.getDate() %></td>
+                            <td><%= data.rows_in[i].total %></td>
+                        </tr>
+                    <% } %>
+                    </table>
+                    <h3>Product Out Report</h4>
+                        <table>
+                        <tr>
+                            <th>Id</th>
+                            <th>Product Name</th>
+                            <th>Date (YYYY-MM-DD)</th>
+                            <th>Total</th>
+                        </tr>
+                        <% for (let i = 0; i < data.count_out; i++) { %>
+                            <tr>
+                                <td><%= data.rows_out[i].id %></td>
+                                <td><%= data.rows_out[i].Product["name"] %></td>
+                                <td><%= data.rows_out[i].date.getFullYear() + '-' + (data.rows_out[i].date.getMonth() + 1) + '-' + data.rows_out[i].date.getDate() %></td>
+                                <td><%= data.rows_out[i].total %></td>
+                            </tr>
+                        <% } %>
+                        </table>
+                <% } %>
+             </div>
+        </div>
+    </body>
+</html>
