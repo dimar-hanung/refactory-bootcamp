@@ -27,7 +27,8 @@ Karena ukuran images yang besar disarankan uji coba di https://labs.play-with-do
     ```bash
     npx sequelize-cli db:migrate
     ```
-
+- [ ] New Problem :)
+    - Jadi setelah melakukan percobaan sekian kali ketika menggunakan command, container tidak bisa berjalan secara otomatis, dugaan sementara karena dia menjalankan migrate yang berati dia menghentikan server node itu sendiri, dan tidak berjalan lagi, jadi disarankan hapus saja line 20 dan lakukan migrate manual
     
 
 ## Run Docker Compose 2 sampai 4x
