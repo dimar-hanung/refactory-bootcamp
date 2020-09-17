@@ -37,6 +37,23 @@ docker-compose up -d
 ```
 
 - `-d ` diatas artinya daemon, yaitu berati berjalan di background jadi logs tidak akan tampil, coba saja experiment tanpa `-d` perbedaan nya akan terlihat jelas
+
+
+## post test
+/api/v1/auth/signup \
+body Request :
+```json
+{
+    "data": {
+        "username": "dimarhanung",
+        "full_name": "dimarhanung",
+        "password": "123abcd",
+        "phone_number":"24342342424234",
+        "email":"dimarhanung@gmail.com"
+    }
+}
+```
+
 ## Explain
 Kenapa 2 kali compose up?\
 karena waktu compose yang pertama mysql belum jalan\
