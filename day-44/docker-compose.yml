@@ -17,7 +17,7 @@ services:
             - 7777:3000
         depends_on: 
             - mysql
-        command: bash -c "npx sequelize-cli db:migrate"
+        # command: bash -c "npx sequelize-cli db:migrate"
         networks: 
             - netwms
 networks: 
