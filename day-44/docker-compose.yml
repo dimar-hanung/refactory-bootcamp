@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+    mysql:
+        container_name: dmysql
+        image: mysql:latest
+        environment:
+            - MYSQL_ROOT_PASSWORD=dimar
+            - MYSQL_DATABASE=rf_wms
+        ports: 
+            - 3309:3306
+        networks: 
+            - netwms
+    bwms:
+        container_name: "bwms"
+        image: dimarhanung/backendwms:v5
+        ports: 
+            - 7777:3000
+        depends_on: 
+            - mysql
+        command: bash -c "npx sequelize-cli db:migrate"
+        networks: 
+            - netwms
+networks: 
+    netwms:
+        name: netwms
