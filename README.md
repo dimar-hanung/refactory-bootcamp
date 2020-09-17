@@ -94,3 +94,5 @@
 24 September 2020
 - day-41 = Mengulang Vuex
 - day-42 = Docker Images
+- day-43 = Docker Network
+- day-44 = Docker Compose

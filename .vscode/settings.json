@@ -19,8 +19,8 @@
     "day-15": true, // Menmabahkan Autentikasi JWT pada RESTful di day-14
     "day-16": true, // Autentikasi rest menggunakan JWT
     "day-17": true, // Team Work - Node Mailer (Beda Repo)
-    "day-18": true, // send email saat register (nodemailer + puppeter + node-corn)
-    "day-19": true, // Static HTML Menggunakan Tailwindcss
+    // "day-18": true, // send email saat register (nodemailer + puppeter + node-corn)
+    // "day-19": true, // Static HTML Menggunakan Tailwindcss
     "day-20": true, // Vue Js + Tailwindcss Membuat Todo App
     "day-21": true, // Libur 17 Agustus
     "day-22": true, // TryOut
@@ -33,15 +33,19 @@
     "day-29": true, // vue route name, named route, lazyloading route, alias, redirect
     "day-30": true, // vuex
     "day-31": true, // vuex
-    "day-32": true, // task vuex 1 hari (Fullstack WMS)
+    // "day-32": true, // task vuex 1 hari (Fullstack WMS)
     "day-33": true, // vuex (pembahasan task) + basic python
     "day-34": true, // Python OOP
     "day-35": true, // Python Env
     "day-36": true, // Python Unit Test
     "day-37": true, // Python CLI App
-    // "day-38": true,
-    // "day-39": true,
-    // "day-40": true
+    "day-38": true, // Python Async
+    "day-39": true, // Tryout
+    "day-40": true, // Shell Script Basic
+    "day-41": true, // Mengulang Vuex
+    "day-42": true, // Dokcer Images
+    "day-43": true, // Docker Networks
+    "day-44": true, // Docker Compose
   },
   "conventionalCommits.scopes": [
     "release",
