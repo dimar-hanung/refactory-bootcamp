@@ -1,0 +1,49 @@
+input {
+    @apply shadow p-1;
+    width: 100%;
+  }
+  .login {
+    @apply font-bold;
+    font-size: 28px;
+    margin: 18px 0;
+    margin-bottom: 22px;
+  }
+  .container {
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .form {
+    @apply border shadow-lg mx-auto;
+    width: 326px;
+    min-height: 395px;
+    padding: 28px 36px;
+  }
+  .form-group {
+    @apply block text-left mx-auto mb-3;
+    font-size: 16px;
+    max-width: 255px;
+  }
+  .form-group label {
+    @apply block mb-2 font-semibold;
+    color: #4a5568;
+  }
+  .submit,
+  .cancel {
+    @apply bg-blue-500 p-1;
+    width: 255px;
+    height: 42px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .submit:hover {
+    @apply shadow bg-blue-600;
+  }
+  .submit:focus {
+    @apply shadow bg-blue-700;
+  }
+  
+  .cancel {
+    @apply bg-white text-blue-500 w-full block mt-2 font-bold;
+  }

@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body,html{
+    margin:0;
+    height: 100%;
+  }
+#app{
+    height: max-content;
+    min-height: 100%;
+    position: relative;
+}
+
+.btn{
+    @apply bg-red-500 text-white;
+    padding:5px;
+}
