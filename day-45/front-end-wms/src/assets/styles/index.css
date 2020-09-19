@@ -1,17 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body,html{
-    margin:0;
-    height: 100%;
-  }
-#app{
-    height: max-content;
-    min-height: 100%;
-    position: relative;
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+#app {
+  height: max-content;
+  min-height: 100%;
+  position: relative;
 }
 
-.btn{
-    @apply bg-red-500 text-white;
-    padding:5px;
+.btn {
+  @apply bg-red-500 text-white;
+  padding: 5px;
 }
+.btn-lg{
+  @apply text-base rounded-md border border-green-500 py-2 px-4;
+}
+.margin-btn > * {
+  @apply mr-2;
+}
+
+.list-box {
+  @apply w-full p-5 border border-green-500 bg-green-100 shadow-lg;
+  /* max-height: 700px; */
+  /* overflow-y: scroll; */
+}
+
+@media (min-width: 640px) {
+}
+/** purgecss start ignore */
+:root {
+  --color-bg-primary: #0252cc;
+  --color-bg-green-300: #9ae6b4;
+  --color-bg-green-200: #c6f6d5;
+  --border-500: #48bb78;
+  --color-bg-secondary: #ffc402;
+  --color-bg-default: #fff;
+  --color-bg-inverse: #fff;
+
+  --color-text-primary: #fff;
+  --color-text-secondary: #755f17;
+  --color-text-default: #444;
+  --color-text-default-soft: #999;
+  --color-text-inverse: #444;
+  --color-text-inverse-soft: #767676;
+
+  --rounded-btn: 0.25rem;
+}
+.theme-dark {
+  --color-bg-primary: #847543;
+  --color-bg-secondary: #dcd0c0;
+  --color-bg-default: #f4f4f4;
+  --color-bg-inverse: #373737;
+  --color-bg-green-300: #e2e8f0;
+  --color-bg-green-200: #edf2f7;
+  --border-500: #a0aec0;
+  --color-text-primary: #fff;
+  --color-text-secondary: #927e7e;
+  --color-text-default: #373737;
+  --color-text-default-soft: #6a6a6a;
+  --color-text-inverse: #fff;
+  --color-text-inverse-soft: #bbb;
+
+  --rounded-btn: 0;
+}
+/** purgecss end ignore */

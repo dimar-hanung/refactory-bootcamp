@@ -29,25 +29,45 @@
         />
       </div>
       <div class="detail-box">
-        <div class="flex">
-          <div class="px-2 bg-indigo-500 text-white">{{ product.total }}</div>
-          <div
-            :class="
-              `px-2 ${
-                product.total <= 5
-                  ? 'bg-red-300'
-                  : product.total <= 15
-                  ? 'bg-blue-300'
-                  : 'bg-green-300'
-              }`
-            "
-          >
-            {{ product.Product.name }}
-          </div>
-        </div>
-        <div>{{ product.date }}</div>
-        <div>{{ product.Product.id }}</div>
-        <div>{{ product.Product.supplier.full_name }}</div>
+        
+        <table>
+          <tr>
+            <td>Id Produk</td>
+            <td>: {{ product.Product.id }}</td>
+          </tr>
+          <tr>
+            <td>
+              <font-awesome-icon
+                :class="
+                  `${
+                    product.total <= 5
+                      ? 'text-red-600'
+                      : product.stock <= 15
+                      ? 'text-blue-600'
+                      : 'text-green-600'
+                  }`
+                "
+                :icon="['fas', 'cube']"
+              />
+              Total
+            </td>
+            <td>: {{ product.total }}</td>
+          </tr>
+          <tr>
+            <td>
+              <font-awesome-icon
+                :icon="['fas', 'calendar']"
+              />
+              Date
+            </td>
+            <td>: {{ product.date }}</td>
+          </tr>
+          <tr>
+            <td><font-awesome-icon :icon="['fas', 'user']" /> Supplier</td>
+            <td>: {{ product.Product.supplier.full_name }}</td>
+          </tr>
+        </table>
+        <button @click="deleteProductOut(product.Product.id)" class="btn-lg"><font-awesome-icon :icon="['fas', 'trash']" />Delete</button>
       </div>
     </div>
   </div>
@@ -68,7 +88,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions("Auth", ["getProductsOut"]),
+    ...mapActions("Auth", ["getProductsOut","deleteProductOut"]),
   },
   computed: {
     ...mapState("Auth", ["productsOut"]),
@@ -81,11 +101,6 @@ export default {
 </script>
 
 <style scoped>
-.list-box {
-  @apply w-full;
-  max-height: 700px;
-  overflow-y: scroll;
-}
 .product {
   @apply py-2 my-2 shadow bg-green-100;
 }

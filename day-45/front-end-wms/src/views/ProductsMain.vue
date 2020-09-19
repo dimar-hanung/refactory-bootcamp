@@ -1,7 +1,6 @@
 <template>
   <div class="list-box">
-    <div class="flex">
-      <print-report getUrl="print?type=all">Print All</print-report>
+    <div class="flex margin-btn">
       <post-modal :inputVal="inputVal" body="form-data" postUrl="product/">
         <div slot="title">Add Product</div>
         <div slot="form-list">
@@ -27,35 +26,64 @@
           />
         </div>
       </post-modal>
-      
+      <print-report getUrl="print?type=all">Print All</print-report>
     </div>
     <div class="product flex" v-for="(product, id) in products.data" :key="id">
       <div class="img-box">
         <img :src="product.photo_url" :alt="product.photo_url" />
       </div>
       <div class="detail-box">
-        <div class="flex">
-          <div class="px-2 bg-indigo-500 text-white">{{ product.stock }}</div>
-          <div
-            :class="
-              `px-2 ${
-                product.stock <= 5
-                  ? 'bg-red-300'
-                  : product.stock <= 15
-                  ? 'bg-blue-300'
-                  : 'bg-green-300'
-              }`
-            "
-          >
-            {{ product.name }}
-          </div>
+        <div>
+          {{ product.name | capitalize }}
         </div>
-        <div>{{ product.price | formatPrice }}</div>
-        <div>{{ product.id }}</div>
-        <div>{{ product.supplier.full_name }}</div>
-        <button @click="deleteProduct(product.id)" class="delete">
-          <font-awesome-icon :icon="['fas', 'trash']" /> Delete
-        </button>
+        <hr/>
+        <table>
+          <tr>
+            <td>Id Produk</td>
+            <td>: {{ product.id }}</td>
+          </tr>
+          <tr>
+            <td>
+              <font-awesome-icon
+                :class="
+                  `${
+                    product.stock <= 5
+                      ? 'text-red-600'
+                      : product.stock <= 15
+                      ? 'text-blue-600'
+                      : 'text-green-600'
+                  }`
+                "
+                :icon="['fas', 'cube']"
+              />
+              Stok
+            </td>
+            <td>: {{ product.stock }}</td>
+          </tr>
+          <tr>
+            <td>
+              <font-awesome-icon
+                class="text-yellow-600"
+                :icon="['fas', 'tag']"
+              />
+              Price
+            </td>
+            <td>: {{ product.price | formatPrice }}</td>
+          </tr>
+          <tr>
+            <td><font-awesome-icon :icon="['fas', 'user']" /> Supplier</td>
+            <td>: {{ product.supplier.full_name }}</td>
+          </tr>
+        </table>
+
+        <div class="flex margin-btn">
+          <button @click="deleteProduct(product.id)" class="delete btn-lg">
+            <font-awesome-icon :icon="['fas', 'trash']" /> Delete
+          </button>
+          <router-link :to="`edit/${product.id}`" class="delete btn-lg">
+            <font-awesome-icon :icon="['fas', 'edit']" /> Edit
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -75,7 +103,7 @@ export default {
   components: {
     PostModal,
     MInput,
-    PrintReport
+    PrintReport,
   },
   methods: {
     // ...mapActions("Auth", ["getProducts", "getProductsIn", "getProductsOut"]),
@@ -95,13 +123,8 @@ export default {
 </script>
 
 <style scoped>
-.list-box {
-  @apply w-full;
-  /* max-height: 700px; */
-  /* overflow-y: scroll; */
-}
 .product {
-  @apply py-2 my-2 shadow bg-green-100;
+  @apply py-2 px-3 my-2 border-b border-green-300 bg-green-100;
 }
 .img-box {
   @apply grid;
@@ -111,6 +134,12 @@ export default {
 .img-box img {
   max-height: 150px;
   max-width: 150px;
+  border-radius: 5px;
+  transition: all ease .5s;
+}
+.img-box:hover img{
+  transition-delay: 1s;
+  transform:scale(2)
 }
 .detail-box {
   margin-left: 20px;

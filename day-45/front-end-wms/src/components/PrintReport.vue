@@ -1,7 +1,7 @@
 <template>
   <div>
     <button
-      class="text-base rounded-md border-2 border-blue-500 text-blue-500 py-2 px-4"
+      class="btn-lg"
       type="button"
       style="transition: all .15s ease"
       @click="printReport"

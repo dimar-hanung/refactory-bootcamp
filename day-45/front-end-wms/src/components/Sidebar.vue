@@ -1,11 +1,14 @@
 <template>
-  <div :class="`nav absolute sm:relative h-full sm:h-auto ${isSidebar?'':'close'}`">
+  <div :class="`nav absolute sm:relative h-full sm:h-auto shadow-lg ${isSidebar?'':'close'}`">
     <a href="#" @click="sidebarToggle" :class="`sidebar-toggle ${isSidebar?'':'right-50'}`"><font-awesome-icon :icon="['fas','bars']" /></a>
     <div class="profile-box">
-      <div class="img-box mx-auto my-3">
+      <div class="profile-name bg-green-200 w-full text-center py-2">
+        Admin Panel
+      </div>
+      <div class="img-box mx-auto mb-3 mt-6">
         <img src="@/assets/logo.png" class="mx-auto block" alt="profile" />
       </div>
-      <div class="profile-name bg-white w-full text-center py-3 my-4">
+      <div class="profile-name bg-green-200 w-full text-center py-3 mt-4">
         {{ user.username }}
       </div>
     </div>
@@ -15,7 +18,7 @@
       <!-- <router-link to="/dashboard">Dashboard</router-link> -->
       <router-link exact to="/dashboard"><font-awesome-icon :icon="['fas', 'home']" /> Dashboard</router-link>
       <router-link to="/products"><font-awesome-icon :icon="['fas', 'shopping-cart']" /> Products</router-link>
-      <router-link to="/about"><font-awesome-icon :icon="['fas','cog']" /> Setting</router-link>
+      <router-link to="/settings"><font-awesome-icon :icon="['fas','cog']" /> Setting</router-link>
       <router-link to="/login"><font-awesome-icon :icon="['fas','sign-out-alt']" /> Logout</router-link>
     </div>
   </div>
@@ -51,7 +54,9 @@ export default {
 }
 .sidebar-toggle{
   position:absolute;
-  right: 0;
+  top: 5px;
+  right: 10px;
+  font-size: 22px;
   transition: all ease .3s;
 }
 
@@ -64,7 +69,7 @@ export default {
 }
 
 .router-box a {
-  @apply block p-2 font-bold bg-green-200 text-gray-800;
+  @apply block py-2 px-4 bg-green-200;
   transition: all ease .1s;
 }
 .router-box a:hover{

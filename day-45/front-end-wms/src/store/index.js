@@ -15,6 +15,7 @@ const Auth = {
     products: "",
     productsIn: "",
     productsOut: "",
+    product:"",
     isError: false,
     errorMessage: "",
   }),
@@ -31,6 +32,9 @@ const Auth = {
     },
     setProductOut(state, payload) {
       state.productsOut = payload;
+    },
+    setProductId(state, payload) {
+      state.product = payload;
     },
   },
   actions: {
@@ -98,11 +102,45 @@ const Auth = {
         .then((res) => commit("setProductOut", res.data.data))
         .catch((error) => console.log({ error }));
     },
+    async getProductId({commit},payload){
+      Api.get(`product/${payload}`)
+      .then((res) => commit("setProductId", res.data.data))
+      .catch((error) => console.log({ error }));
+    },
+    async editProduct({dispatch},payload){
+      let formData = new FormData();
+      for (var key of Object.keys(payload)) {
+        formData.append(key, payload[key]);
+        console.log(key, payload[key]);
+      }
+      if (payload.FILE) {
+        formData.append("photo", this.inputVal.FILE, this.inputVal.FILE.name);
+      }
+      Api
+        .put(`product/${payload.id}`, formData, {})
+        .then((res) => {
+          dispatch("getProductId",payload.id)
+          console.log(res);
+        })
+        .catch((err) => console.log(err));
+    },
+   
     // ==================== xxx Get Products xxx ================================
 
     async deleteProduct({ dispatch }, id) {
-      Api.delete(`/product/${id}`)
+      Api.delete(`product/${id}`)
         .then(() => dispatch("getProducts"))
+        .catch((error) => console.log({ error }));
+    },
+     async deleteProductIn({ dispatch }, id) {
+       console.log(id)
+      Api.delete(`in/${id}`)
+        .then(() => dispatch("getProductsIn"))
+        .catch((error) => console.log({ error }));
+    },
+    async deleteProductOut({ dispatch }, id) {
+      Api.delete(`out/${id}`)
+        .then(() => dispatch("getProductsOut"))
         .catch((error) => console.log({ error }));
     },
   },

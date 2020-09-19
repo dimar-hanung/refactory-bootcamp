@@ -4,7 +4,7 @@
         <div class="flex products-menu">
             
           <router-link to="/products/main">
-           Product
+           All
           </router-link>
           <router-link to="/products/in">
            In
@@ -29,10 +29,11 @@
     min-height: 100%;
 }
 .products-menu a{
-    @apply px-2 mr-2 bg-green-300 font-bold;
+    @apply p-2 mr-2 bg-green-300 text-center;
+    min-width: 100px;
 }
 .products-menu a.router-link-exact-active{
-    @apply text-green-700;
+    @apply text-red-700;
 }
 
 </style>

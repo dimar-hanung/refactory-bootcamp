@@ -25,6 +25,12 @@ Vue.filter('formatPrice', function (value) {
   // return "Rp." + (value/1000).toFixed(3);
 })
 
+Vue.filter('capitalize', function (value) {
+  return value.replace(/(^\w{1})|(\s{1}\w{1})/g, (match) =>
+      match.toUpperCase()
+    );
+})
+
 Vue.config.productionTip = false;
 
 new Vue({

@@ -34,6 +34,11 @@ const routes = [
     component:()=> import(/* webpackChunkName: "Dashboard" */ "../views/Dashboard.vue"),
   },
   {
+    path:"/settings",
+    name:"Settings",
+    component:()=> import(/* webpackChunkName: "Settings" */ "../views/Settings.vue"),
+  },
+  {
     path:"/products",
     redirect: '/products/main',
     name:"Products",
@@ -50,6 +55,10 @@ const routes = [
       {
         path: 'main',
         component:()=> import(/* webpackChunkName: "ProductsMain" */ "../views/ProductsMain.vue"),
+      },
+      {
+        path: 'edit/:id',
+        component:()=> import(/* webpackChunkName: "ProductsEdit" */ "../views/ProductEdit.vue"),
       }
     ]
   }
