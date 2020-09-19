@@ -1,7 +1,7 @@
 import axios from "axios";
-import NProgress from 'nprogress'
+import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-
+import Vue from "vue";
 const token = localStorage.getItem("token");
 console.log(token);
 axios.defaults.headers.common = { Authorization: `bearer ${token}` };
@@ -24,10 +24,14 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   function(response) {
     NProgress.done()
+    Vue.$toast.open(response.data.message);
     console.log({ response });
     return response;
   },
   function(error) {
+    NProgress.done()
+    Vue.$toast.error(error.message);
+    Vue.$toast.error(error.response.data.message);
     return Promise.reject(error.response.data.message);
   }
 );

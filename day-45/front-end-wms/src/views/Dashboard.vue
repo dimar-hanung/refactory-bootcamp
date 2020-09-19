@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard bg-inverse">
+  <div class="dashboard bg-green-100">
     <div class="box-wrap w-full mx-auto text-center">
       <router-link to="/products/main">
         <div class="box-item">

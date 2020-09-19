@@ -19,6 +19,7 @@
       <router-link exact to="/dashboard"><font-awesome-icon :icon="['fas', 'home']" /> Dashboard</router-link>
       <router-link to="/products"><font-awesome-icon :icon="['fas', 'shopping-cart']" /> Products</router-link>
       <router-link to="/settings"><font-awesome-icon :icon="['fas','cog']" /> Setting</router-link>
+      <router-link to="/users"><font-awesome-icon :icon="['fas','user']" /> Users</router-link>
       <router-link to="/login"><font-awesome-icon :icon="['fas','sign-out-alt']" /> Logout</router-link>
     </div>
   </div>

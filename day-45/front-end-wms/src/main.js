@@ -3,9 +3,21 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import '@/assets/styles/index.css';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import {fas}  from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {fas}  from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import VueToast from 'vue-toast-notification';
+// Import one of available themes
+// import 'vue-toast-notification/dist/theme-default.css';
+//import 'vue-toast-notification/dist/theme-sugar.css';
+ 
+Vue.use(VueToast, {
+  // One of the options
+  position: 'top-right',
+  duration:5000
+})
+Vue.$toast.open('You did it!');
+
 
 library.add(fas)
 

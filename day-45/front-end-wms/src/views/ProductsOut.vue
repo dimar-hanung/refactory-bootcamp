@@ -67,7 +67,7 @@
             <td>: {{ product.Product.supplier.full_name }}</td>
           </tr>
         </table>
-        <button @click="deleteProductOut(product.Product.id)" class="btn-lg"><font-awesome-icon :icon="['fas', 'trash']" />Delete</button>
+        <button @click="deleteProductOut(product.id)" class="btn-lg"><font-awesome-icon :icon="['fas', 'trash']" />Delete</button>
       </div>
     </div>
   </div>
