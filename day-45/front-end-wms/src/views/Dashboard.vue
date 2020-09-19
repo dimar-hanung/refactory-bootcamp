@@ -52,7 +52,7 @@ export default {
 }
 
 .box-item {
-  @apply p-3 border border-green-600 w-full mx-auto my-3 rounded;
+  @apply p-3 border border-green-500 w-full mx-auto my-3 rounded;
   max-width: 250px;
 }
 </style>

@@ -1,30 +1,50 @@
 <template>
-  <div>
-    <div id="theme-btn" class="text-inverse" @click="toggleDark">test</div>
+  <div class="theme-button-wrap">
+    <div class="flex margin-btn">
+      <button id="theme-btn" class="btn-lg" @click="toggleDark('light')">Light</button>
+      <button id="theme-btn" class="btn-lg" @click="toggleDark('dark')">dark</button>
+      <button id="theme-btn" class="btn-lg" @click="toggleDark('vue')">vue</button>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    toggleDark() {
-      var d = document.documentElement,
-        m = localStorage.getItem("theme");
+    toggleDark(theme) {
+      var d = document.documentElement;
+        // m = localStorage.getItem("theme");
 
-      if (m == "dark") {
-        d.classList.add("theme-dark");
+      if (theme == "light") {
+        d.setAttribute("class","theme-light")
+        localStorage.setItem("theme", "light");
       }
-
-      if (d.classList.contains("theme-dark")) {
-        d.classList.remove("theme-dark");
-        localStorage.removeItem("theme");
-      } else {
+      if (theme == "dark") {
         d.classList.add("theme-dark");
+        d.setAttribute("class","theme-dark text-inverse")
         localStorage.setItem("theme", "dark");
       }
+      if (theme == "vue") {
+        d.setAttribute("class","text-inverse")
+        localStorage.removeItem("theme");
+      }
+
+      // if (d.classList.contains("theme-light")) {
+      //   d.classList.remove("theme-light");
+      //   localStorage.removeItem("theme");
+      // } else {
+      //   d.classList.add("theme-light");
+      //   localStorage.setItem("theme", "light");
+      // }
     },
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+  .theme-button-wrap{
+    @apply bg-green-100 grid;
+    place-items:center;
+  }
+
+</style>

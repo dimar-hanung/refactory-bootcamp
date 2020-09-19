@@ -28,15 +28,14 @@
       </post-modal>
       <print-report getUrl="print?type=all">Print All</print-report>
     </div>
-    <div class="product flex" v-for="(product, id) in products.data" :key="id">
-      <div class="img-box">
+    <div class="product block sm:flex" v-for="(product, id) in products.data" :key="id">
+      <div class="img-box sm:mx-0 mx-auto">
         <img :src="product.photo_url" :alt="product.photo_url" />
       </div>
-      <div class="detail-box">
+      <div class="detail-box mx-auto">
         <div>
           {{ product.name | capitalize }}
         </div>
-        <hr/>
         <table>
           <tr>
             <td>Id Produk</td>

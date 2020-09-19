@@ -18,7 +18,7 @@ Vue.use(VueToast, {
 })
 Vue.$toast.open('You did it!');
 
-
+document.documentElement.setAttribute("class",`theme-${localStorage.getItem("theme")} text-inverse`)
 library.add(fas)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

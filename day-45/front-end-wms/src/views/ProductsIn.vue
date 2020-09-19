@@ -1,6 +1,6 @@
 <template>
   <div class="list-box">
-    <div class="block">
+    <div class="flex margin-btn">
       <post-modal v-bind:inputVal="inputVal" body="raw" postUrl="in/">
         <div slot="title">Add Product In</div>
         <div slot="form-list">
@@ -16,6 +16,7 @@
           />
         </div>
       </post-modal>
+      <print-report getUrl="print?type=in">Print In</print-report>
     </div>
     <div>
       <div
@@ -78,10 +79,12 @@
 import { mapActions, mapState } from "vuex";
 import postModal from "@/components/modal/PostModal.vue";
 import MInput from "@/components/modal/MInput.vue";
+import PrintReport from "@/components/PrintReport.vue";
 export default {
   components: {
     postModal,
     MInput,
+    PrintReport
   },
   data() {
     return {
