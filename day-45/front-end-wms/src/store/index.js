@@ -78,7 +78,7 @@ const Auth = {
 
     // ==================== Get Products ================================
     async getProducts({ commit }) {
-      Api.get("/product", {
+      Api.get("/product?limit=10000", {
         headers: { Authorization: `bearer ${localStorage.getItem("token")}` },
       })
         .then((res) => commit("setProduct", res.data.data))

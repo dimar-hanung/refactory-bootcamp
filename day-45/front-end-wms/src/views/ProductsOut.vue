@@ -1,26 +1,72 @@
 <template>
-   <div class="list-box">
-            <div class="product flex" v-for="(product,id) in productsOut.data" :key="id">
-                <div class="img-box">
-                    <img :src="product.Product.photo_url" :alt="product.Product.photo_url">
-                </div>
-                <div class="detail-box">
-                <div class="flex">
-                    <div class="px-2 bg-indigo-500 text-white">{{product.total}}</div>
-                    <div :class="`px-2 ${product.total <= 5?'bg-red-300':product.total <= 15?'bg-blue-300':'bg-green-300'}`">{{product.Product.name}}</div>
-                </div>
-                <div>{{product.date}}</div>
-                <div>{{product.Product.id}}</div>
-                <div>{{product.Product.supplier.full_name}}</div>
-                </div>
-            </div>
+  <div class="list-box">
+    <div class="block">
+      <post-modal v-bind:inputVal="inputVal" body="raw" postUrl="out/">
+        <div slot="title">Add Product Out</div>
+        <div slot="form-list">
+          <m-input
+            labelName="Product Name"
+            type="number"
+            v-on:input="inputVal.product_id = $event"
+          />
+          <m-input
+            labelName="Stock"
+            type="number"
+            v-on:input="inputVal.total = $event"
+          />
+        </div>
+      </post-modal>
     </div>
+    <div
+      class="product flex"
+      v-for="(product, id) in productsOut.data"
+      :key="id"
+    >
+      <div class="img-box">
+        <img
+          :src="product.Product.photo_url"
+          :alt="product.Product.photo_url"
+        />
+      </div>
+      <div class="detail-box">
+        <div class="flex">
+          <div class="px-2 bg-indigo-500 text-white">{{ product.total }}</div>
+          <div
+            :class="
+              `px-2 ${
+                product.total <= 5
+                  ? 'bg-red-300'
+                  : product.total <= 15
+                  ? 'bg-blue-300'
+                  : 'bg-green-300'
+              }`
+            "
+          >
+            {{ product.Product.name }}
+          </div>
+        </div>
+        <div>{{ product.date }}</div>
+        <div>{{ product.Product.id }}</div>
+        <div>{{ product.Product.supplier.full_name }}</div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-  import { mapActions, mapState } from "vuex";
-
+import { mapActions, mapState } from "vuex";
+import postModal from "@/components/modal/PostModal.vue";
+import MInput from "@/components/modal/MInput.vue";
 export default {
+  components: {
+    postModal,
+    MInput,
+  },
+  data() {
+    return {
+      inputVal: {}
+    }
+  },
   methods: {
     ...mapActions("Auth", ["getProductsOut"]),
   },

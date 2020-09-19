@@ -2,9 +2,7 @@
   <div class="container wrap">
     <div class="w-full">
         <div class="flex products-menu">
-            <a href="#">
-                <all-product-modal/>
-            </a>
+            
           <router-link to="/products/main">
            Product
           </router-link>
@@ -21,13 +19,7 @@
 </template>
 
 <script>
-import AllProductModal from "@/components/modal/AllProduct.vue";
 
-export default {
-    components: {
-        AllProductModal
-    },
-};
 </script>
 
 <style scoped>
@@ -37,7 +29,7 @@ export default {
     min-height: 100%;
 }
 .products-menu a{
-    @apply p-2 mx-2 bg-green-300 font-bold;
+    @apply px-2 mr-2 bg-green-300 font-bold;
 }
 .products-menu a.router-link-exact-active{
     @apply text-green-700;

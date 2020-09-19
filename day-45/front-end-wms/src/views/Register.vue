@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto container">
+  <div class="mx-auto container min-h-screen">
     <form class="form" style="max-width:326px" @submit="sendRequest">
       <div class="login">Register</div>
       <div class="form-group">

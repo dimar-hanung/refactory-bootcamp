@@ -1,5 +1,34 @@
 <template>
   <div class="list-box">
+    <div class="flex">
+      <print-report getUrl="print?type=all">Print All</print-report>
+      <post-modal :inputVal="inputVal" body="form-data" postUrl="product/">
+        <div slot="title">Add Product</div>
+        <div slot="form-list">
+          <m-input
+            labelName="Product Name"
+            type="text"
+            v-on:input="inputVal.name = $event"
+          />
+          <m-input
+            labelName="Stock"
+            type="number"
+            v-on:input="inputVal.stock = $event"
+          />
+          <m-input
+            labelName="Price"
+            type="number"
+            v-on:input="inputVal.price = $event"
+          />
+          <m-input
+            labelName="Product Name"
+            type="file"
+            v-on:input="inputVal.FILE = $event"
+          />
+        </div>
+      </post-modal>
+      
+    </div>
     <div class="product flex" v-for="(product, id) in products.data" :key="id">
       <div class="img-box">
         <img :src="product.photo_url" :alt="product.photo_url" />
@@ -21,10 +50,12 @@
             {{ product.name }}
           </div>
         </div>
-        <div>{{ product.price }}</div>
+        <div>{{ product.price | formatPrice }}</div>
         <div>{{ product.id }}</div>
         <div>{{ product.supplier.full_name }}</div>
-        <div @click="deleteProduct(product.id)" class="delete">Delete</div>
+        <button @click="deleteProduct(product.id)" class="delete">
+          <font-awesome-icon :icon="['fas', 'trash']" /> Delete
+        </button>
       </div>
     </div>
   </div>
@@ -32,11 +63,23 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
-
+import PostModal from "@/components/modal/PostModal.vue";
+import MInput from "@/components/modal/MInput.vue";
+import PrintReport from "@/components/PrintReport.vue";
 export default {
+  data() {
+    return {
+      inputVal: {},
+    };
+  },
+  components: {
+    PostModal,
+    MInput,
+    PrintReport
+  },
   methods: {
     // ...mapActions("Auth", ["getProducts", "getProductsIn", "getProductsOut"]),
-    ...mapActions("Auth", ["getProducts","deleteProduct"]),
+    ...mapActions("Auth", ["getProducts", "deleteProduct"]),
   },
   computed: {
     // ...mapState("Auth", ["products", "productsIn", "productsOut"]),
