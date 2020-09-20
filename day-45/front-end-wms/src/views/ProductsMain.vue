@@ -27,8 +27,16 @@
         </div>
       </post-modal>
       <print-report getUrl="print?type=all">Print All</print-report>
+      <select class="btn-lg" name="pagination" @input="changePage">
+        <option selected disabled>Page {{$route.query.page}}</option>
+        <option :value="index" v-for="index in products.data.totalPages" :key="index">Page {{index}}</option>
+      </select>
     </div>
-    <div class="product block sm:flex" v-for="(product, id) in products.data" :key="id">
+    <div
+      class="product block sm:flex"
+      v-for="(product, id) in products.data.data"
+      :key="id"
+    >
       <div class="img-box sm:mx-0 mx-auto">
         <img :src="product.photo_url" :alt="product.photo_url" />
       </div>
@@ -93,6 +101,7 @@ import { mapActions, mapState } from "vuex";
 import PostModal from "@/components/modal/PostModal.vue";
 import MInput from "@/components/modal/MInput.vue";
 import PrintReport from "@/components/PrintReport.vue";
+import "@/assets/styles/product.css"
 export default {
   data() {
     return {
@@ -107,6 +116,13 @@ export default {
   methods: {
     // ...mapActions("Auth", ["getProducts", "getProductsIn", "getProductsOut"]),
     ...mapActions("Auth", ["getProducts", "deleteProduct"]),
+    changePage(e){
+      const val = e.target.value
+      const qroute = this.$route.query;
+      if(!qroute.limit) qroute.limit = 5
+      this.$router.push(`/products/main?limit=${qroute.limit}&page=${val}`)
+      this.getProducts(this.$route.query);
+    }
   },
   computed: {
     // ...mapState("Auth", ["products", "productsIn", "productsOut"]),
@@ -114,7 +130,12 @@ export default {
   },
   mounted() {
     // console.log(from)
-    this.getProducts();
+    const qroute = this.$route.query;
+      if(!qroute.limit) {
+        qroute.limit = 5
+        this.$router.push(`/products/main?limit=${qroute.limit}&page=${1}`)
+        }
+    this.getProducts(qroute);
     // this.getProductsIn();
     // this.getProductsOut();
   },
@@ -122,26 +143,5 @@ export default {
 </script>
 
 <style scoped>
-.product {
-  @apply py-2 px-3 my-2 border-b border-green-300 bg-green-100;
-}
-.img-box {
-  @apply grid;
-  place-items: center;
-  width: 150px;
-}
-.img-box img {
-  max-height: 150px;
-  max-width: 150px;
-  border-radius: 5px;
-  transition: all ease .5s;
-}
-.img-box:hover img{
-  transition-delay: 1s;
-  transform:scale(2)
-}
-.detail-box {
-  margin-left: 20px;
-  max-height: 100%;
-}
+
 </style>

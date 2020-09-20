@@ -16,7 +16,7 @@ Vue.use(VueToast, {
   position: 'top-right',
   duration:5000
 })
-Vue.$toast.open('You did it!');
+Vue.$toast.open('Selamat Datang...');
 
 document.documentElement.setAttribute("class",`theme-${localStorage.getItem("theme")} text-inverse`)
 library.add(fas)

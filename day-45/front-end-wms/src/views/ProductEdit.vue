@@ -5,10 +5,10 @@
         <img :src="product.photo_url" alt="" />
       </div>
       <div>
-        <div class="font-bold text-gray-800">
+        <div class="font-bold">
           Id
         </div>
-        <div class="p-2 bg-gray-200">
+        <div class="p-2 bg-green-200">
           {{ product.id }}
         </div>
         <m-input
@@ -31,22 +31,22 @@
       </div>
 
       <div :class="`supplier ${isSupplier ? 's-hide' : ''}`">
-        <div class="font-bold text-gray-800">
+        <div class="font-bold mb-2">
           Name
         </div>
-        <div class="p-2 bg-gray-200">
+        <div class="p-2 mb-2 bg-green-200">
          {{inputVal.data.supplier.full_name}} 
         </div>
-        <div class="font-bold text-gray-800">
+        <div class="font-bold mb-2">
           Email
         </div>
-        <div class="p-2 bg-gray-200">
+        <div class="p-2 mb-2 bg-green-200">
           {{inputVal.data.supplier.email}} 
         </div>
-        <div class="font-bold text-gray-800">
+        <div class="font-bold mb-2">
           role
         </div>
-        <div class="p-2 bg-gray-200">
+        <div class="p-2 mb-2 bg-green-200">
           {{inputVal.data.supplier.role}} 
         </div>
       </div>
@@ -69,7 +69,7 @@ export default {
   },
   data() {
     return {
-      isSupplier: false,
+      isSupplier: true,
     };
   },
   methods: {
@@ -105,7 +105,7 @@ export default {
 }
 .supplier {
   transition: all ease 0.4s;
-  height: 200px;
+  height: 250px;
 }
 .s-hide {
   /* font-size: 0px; */

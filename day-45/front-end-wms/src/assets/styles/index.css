@@ -1,9 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/** purgecss start ignore */
-@import 'theme-default.css';
-/** purgecss end ignore */
+/*! purgecss start ignore */
+@import "theme-default.css";
+@import "nprogress.css";
+/*! purgecss end ignore */
 body,
 html {
   margin: 0;
@@ -14,13 +15,31 @@ html {
   min-height: 100%;
   position: relative;
 }
+.wrap {
+  @apply mx-auto mt-10;
+  height: max-content;
+  min-height: 100%;
+}
 
 .btn {
   @apply bg-red-500 text-white;
   padding: 5px;
 }
-.btn-lg{
-  @apply text-base rounded-md border border-green-500 py-2 px-4;
+.btn-lg {
+  @apply text-base rounded-md border border-green-500 py-2 px-4 cursor-pointer;
+
+  transition:all ease .3s;
+  
+}
+
+.btn-lg:hover{
+  @apply bg-green-200;
+}
+select{
+  @apply bg-green-200;
+}
+option {
+  background: transparent;
 }
 .margin-btn > * {
   @apply mr-2;
@@ -39,38 +58,35 @@ html {
   --color-bg-primary: #0252cc;
   --color-bg-green-300: #9ae6b4;
   --color-bg-green-200: #c6f6d5;
-  --color-bg-green-100: #f0fff4;
+  --color-bg-green-100: #defbe6;
   --border-500: #9ae6b4;
 
   --color-bg-inverse: #fff;
 
-
   --color-text-inverse: #444;
-  --color-text-inverse-soft: #767676;
+  --color-text-inverse-soft: #000;
 
   --rounded-btn: 0.25rem;
 }
 .theme-light {
-
   --color-bg-inverse: #373737;
   --color-bg-green-300: #e2e8f0;
   --color-bg-green-200: #edf2f7;
   --color-bg-green-100: #f7fafc;
   --border-500: #a0aec0;
   --color-text-inverse: #2d3748;
-  --color-text-inverse-soft: #bbb;
+  --color-text-inverse-soft: #276749;
 
   --rounded-btn: 0;
 }
 .theme-dark {
-
   --color-bg-inverse: #373737;
-  --color-bg-green-300: #2d3748;
-  --color-bg-green-200: #4a5568;
+  --color-bg-green-300: #1a202c;
+  --color-bg-green-200: #2d3748;
   --color-bg-green-100: #1a202c;
-  --border-500: #4a5568 ;
+  --border-500: #1a202c;
   --color-text-inverse: #fff;
-  --color-text-inverse-soft: #bbb;
+  --color-text-inverse-soft: #fff;
 
   --rounded-btn: 0;
 }

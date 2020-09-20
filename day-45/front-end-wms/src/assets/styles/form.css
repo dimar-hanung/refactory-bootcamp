@@ -14,10 +14,13 @@ input {
     place-items: center;
   }
   .form {
-    @apply border shadow-lg mx-auto;
+    @apply border border-green-500 shadow-lg mx-auto;
     width: 326px;
     min-height: 395px;
     padding: 28px 36px;
+  }
+  .form input{
+    color: #000;
   }
   .form-group {
     @apply block text-left mx-auto mb-3;
@@ -26,7 +29,6 @@ input {
   }
   .form-group label {
     @apply block mb-2 font-semibold;
-    color: #4a5568;
   }
   .submit,
   .cancel {

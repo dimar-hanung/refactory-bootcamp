@@ -1,0 +1,22 @@
+.product {
+    @apply py-2 px-3 my-2 border-b border-green-300 bg-green-100;
+  }
+  .img-box {
+    @apply grid;
+    place-items: center;
+    width: 150px;
+  }
+  .img-box img {
+    max-height: 150px;
+    max-width: 150px;
+    border-radius: 5px;
+    transition: all ease 0.5s;
+  }
+  .img-box:hover img {
+    transition-delay: 1s;
+    transform: scale(2);
+  }
+  .detail-box {
+    margin-left: 20px;
+    max-height: 100%;
+  }

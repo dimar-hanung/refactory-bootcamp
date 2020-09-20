@@ -4,7 +4,7 @@
       <router-link to="/products/main">
         <div class="box-item">
           <div>Total All Product</div>
-          <div class="font-bold">{{ products.totalItems }}</div>
+          <div class="font-bold">{{ products.data.totalItems }}</div>
         </div>
       </router-link>
       <router-link to="/products/in">

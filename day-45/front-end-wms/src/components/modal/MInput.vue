@@ -1,11 +1,11 @@
 <template>
   <div class="mb-4">
     <label
-      class="text-left block text-gray-700 text-base font-bold mb-2"
+      class="text-left block text-base font-bold mb-2"
       >{{labelName}}</label
     >
     <input
-      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      class="shadow appearance-none border rounded w-full py-2 px-3 bg-green-200 leading-tight focus:outline-none focus:shadow-outline"
       :type="type"
       v-on:input="checkType"
       :value="value"

@@ -117,6 +117,7 @@ export default {
         .post(this.postUrl, formData, {})
         .then((res) => {
           console.log(res);
+          this.showModal = false;
         })
         .catch((err) => console.log(err));
     },

@@ -68,7 +68,7 @@
             <td>: {{ product.Product.supplier.full_name }}</td>
           </tr>
         </table>
-        <button @click="deleteProductOut(product.id)" class="btn-lg"><font-awesome-icon :icon="['fas', 'trash']" />Delete</button>
+        <button @click="deleteProductOut(product.id)" class="btn-lg"><font-awesome-icon :icon="['fas', 'trash']" /> Delete</button>
       </div>
     </div>
   </div>
@@ -79,6 +79,7 @@ import { mapActions, mapState } from "vuex";
 import postModal from "@/components/modal/PostModal.vue";
 import MInput from "@/components/modal/MInput.vue";
 import PrintReport from "@/components/PrintReport.vue";
+import "@/assets/styles/product.css"
 export default {
   components: {
     postModal,
@@ -104,20 +105,5 @@ export default {
 </script>
 
 <style scoped>
-.product {
-  @apply py-2 my-2 shadow bg-green-100;
-}
-.img-box {
-  @apply grid;
-  place-items: center;
-  width: 150px;
-}
-.img-box img {
-  max-height: 150px;
-  max-width: 150px;
-}
-.detail-box {
-  margin-left: 20px;
-  max-height: 100%;
-}
+
 </style>

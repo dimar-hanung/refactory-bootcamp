@@ -84,11 +84,13 @@ const Auth = {
     },
 
     // ==================== Get Products ================================
-    async getProducts({ commit }) {
-      Api.get("/product?limit=10000", {
+    async getProducts({ commit },query = {limit:5}) {
+      console.log(query)
+      Api.get(`/product`, {
+        params : query,
         headers: { Authorization: `bearer ${localStorage.getItem("token")}` },
       })
-        .then((res) => commit("setProduct", res.data.data))
+        .then((res) => commit("setProduct", res.data))
         .catch((error) => console.log({ error }));
     },
     async getProductsIn({ commit }) {
@@ -130,8 +132,10 @@ const Auth = {
     // ==================== xxx Get Products xxx ================================
     // ====================  Del Product  ================================
     async deleteProduct({ dispatch }, id) {
+      if(confirm(`Sudah Yakin Delete Id ${id} ?`))
       Api.delete(`product/${id}`)
         .then(() => dispatch("getProducts"))
+
         .catch((error) => console.log({ error }));
     },
     async deleteProductIn({ dispatch }, id) {
@@ -152,8 +156,6 @@ const Auth = {
         .then((res) => commit("setUsers", res.data.data))
         .catch((error) => console.log({ error }));
     },
-
-
   },
 };
 

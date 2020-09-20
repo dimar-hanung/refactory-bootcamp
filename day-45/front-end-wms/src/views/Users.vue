@@ -59,7 +59,7 @@ export default {
 
 <style scoped>
 .wrap {
-    @apply mx-auto mt-10;
+    @apply mx-auto mt-10 mb-10;
     height: max-content;
     min-height: 100%;
 }
