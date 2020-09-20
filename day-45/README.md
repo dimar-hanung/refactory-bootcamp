@@ -1,33 +1,48 @@
 # Try Out VueJS - WMS
 
 ## Live Demo
-- Firebase: https://dimar-vue-front-wms.web.app
-- Heroku: Not Yet
+- Firebase: https://dimar-vue-front-wms.web.app - Up To Date - Forever
+- Heroku: https://dimar-front-wms-2.herokuapp.com/ - Up To Date until Deadline
+
+## Note
+- Tidak Menggunakan Search Box karena tidak tersedia dari backend nya, karena pagination menggunakan trigger dari query params nya bukan di load semua langsung
+- Abaikan langkah pengerjaan, waktu tidak cukup :smile:
 
 ## Main Task
 
-- [ ] membuat aplikasi Frontend untuk Simple Warehout management System menggunakan Vue js include Vuex dan Vue Route, design dan framework css bebas (tailwind di sarankan)
-- [ ] Untuk endpoint dan API Documentation masih sama, hanya base url di arahkan ke https://simple-wms.herokuapp.com/
-- [ ] publish atau deploy aplikasi ke heroku , Documentation
+- [x] membuat aplikasi Frontend untuk Simple Warehout management System menggunakan Vue js include Vuex dan Vue Route, design dan framework css bebas (tailwind di sarankan)
+- [x] Untuk endpoint dan API Documentation masih sama, hanya base url di arahkan ke https://simple-wms.herokuapp.com/
+- [x] publish atau deploy aplikasi ke heroku | 2020-09-20 14:44:08
 
-## Implementation
+## Implementation, Techinique & Task
 
 - [x] Vue CLI | [Install](https://cli.vuejs.org/guide/installation.html)
 - [x] Bagi Ke Component
+- [x] Nested Children Modal | Form with slot -> Form Request Component -> Input Component
 - [x] Sidebar Responsive
 - [x] Login Page
 - [x] Register Page
 - [x] Dashboard Page
-- [x] Products All Page
-- [ ] Pagination
-- [ ] Download PDF
+- [x] Products | C R U D
+- [x] Productin & out | C R D
+- [x] User | C R
+- [x] Pagination | Product All
+- [x] Download PDF (server yg error)
 - [x] Loading Bar (NProgress)
-- [x] Toast
+- [x] Toast | vue-toast-notification
 - [x] Tailwindcss
+- [x] Purgecss Untuk Small CSS Size
+- [x] Cache State | vuex-persistedstate
 - [x] Firebase Deploy | 2020-09-20 01:27:25
-- [ ] Heroku Deploy
+- [x] Responsive (Up to 350px)
+- [x] Theme, Dark, Light, Vue (green)
+- [x] Toast Options
+- [x] Heroku Deploy | 2020-09-20 14:44:08
 
-
+## Problem
+- [ ] Pagination URL Bug
+- [ ] Beberapa Bug Styling tidak terduga
+- [ ] First Get Sering Bug
 
 # Langkah Pengerjaan
 
