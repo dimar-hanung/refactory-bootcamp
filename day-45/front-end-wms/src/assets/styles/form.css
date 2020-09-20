@@ -1,5 +1,5 @@
 input {
-    @apply shadow p-1;
+    @apply shadow p-1 text-black;
     width: 100%;
   }
   .login {
@@ -20,7 +20,7 @@ input {
     padding: 28px 36px;
   }
   .form input{
-    color: #000;
+    /* color: #000; */
   }
   .form-group {
     @apply block text-left mx-auto mb-3;
@@ -32,20 +32,18 @@ input {
   }
   .submit,
   .cancel {
-    @apply bg-blue-500 p-1;
+    @apply bg-green-300 p-2 text-inverse block;
     width: 255px;
-    height: 42px;
-    color: white;
     cursor: pointer;
     border-radius: 4px;
   }
-  .submit:hover {
-    @apply shadow bg-blue-600;
+  .submit:hover,.cancel:hover {
+    @apply shadow bg-green-300;
   }
-  .submit:focus {
-    @apply shadow bg-blue-700;
+  .submit:focus,.cancel:focus {
+    @apply shadow bg-green-200;
   }
   
   .cancel {
-    @apply bg-white text-blue-500 w-full block mt-2 font-bold;
+    @apply mt-2 text-center;
   }
