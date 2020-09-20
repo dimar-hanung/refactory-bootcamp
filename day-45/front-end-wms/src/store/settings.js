@@ -21,7 +21,7 @@ const Setting = {
       },
     selectTheme({ commit },theme) {
         {commit}
-      const d = document.documentElement;
+      const d = document.getElementsByTagName('body')[0];
       // m = localStorage.getItem("theme");
 
       if (theme == "light") {

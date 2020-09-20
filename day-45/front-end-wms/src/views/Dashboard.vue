@@ -29,7 +29,7 @@ import { mapActions, mapState } from "vuex";
 
 export default {
   methods: {
-    ...mapActions("Auth", ["getProducts", "getProductsIn", "getProductsOut"]),
+    ...mapActions("Auth", ["getProducts", "getProductsIn", "getProductsOut","getUsers"]),
     
   },
   computed: {
@@ -37,9 +37,13 @@ export default {
   },
   mounted() {
     // console.log(from)
+    if(localStorage.getItem("firstLogin") != "1"){
+      localStorage.setItem("firstLogin","1")
+    }
     this.getProducts({limit:1});
     this.getProductsIn({limit:1});
     this.getProductsOut({limit:1});
+    this.getUsers({limit:1});
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="flex bg-green-200">
+  <div id="app" class="flex bg-green-200 text-inverse">
     <sidebar v-if="!$route.meta.hideNavigation" />
     <router-view class="w-full" />
   </div>
