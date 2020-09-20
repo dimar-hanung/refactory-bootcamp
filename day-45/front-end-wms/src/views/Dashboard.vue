@@ -37,9 +37,9 @@ export default {
   },
   mounted() {
     // console.log(from)
-    this.getProducts();
-    this.getProductsIn();
-    this.getProductsOut();
+    this.getProducts({limit:1});
+    this.getProductsIn({limit:1});
+    this.getProductsOut({limit:1});
   },
 };
 </script>

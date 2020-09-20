@@ -36,7 +36,7 @@
       <router-link to="/settings"
         ><font-awesome-icon :icon="['fas', 'cog']" /> Setting</router-link
       >
-      <router-link to="/users"
+      <router-link to="/users?limit=5&page=1"
         ><font-awesome-icon :icon="['fas', 'user']" /> Users</router-link
       >
       <a href="#" @click="userLogout"

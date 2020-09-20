@@ -1,9 +1,13 @@
 <template>
   <div class="container wrap">
+     
     <div class="list-box">
+        <select class="btn-lg" name="pagination" @input="changePage">
+        <option selected disabled>Page {{$route.query.page}}</option>
+        <option :value="index" v-for="index in users.totalPages" :key="index">Page {{index}}</option>
+      </select>
         <div class="product flex" v-for="(user, id) in users.data" :key="id">
           <div class="detail-box">
-            <hr />
             <table>
               <tr>
                 <td><font-awesome-icon :icon="['fas', 'user']" /> Full Name</td>
@@ -47,12 +51,20 @@ import { mapState, mapActions } from "vuex";
 export default {
   methods: {
     ...mapActions("Auth", ["getUsers"]),
+    changePage(e){
+      const val = e.target.value
+      const qroute = this.$route.query;
+      if(!qroute.limit) qroute.limit = 5
+      this.$router.push(`/users?limit=${qroute.limit}&page=${val}`)
+      this.getUsers(this.$route.query);
+    }
   },
   computed: {
     ...mapState("Auth", ["users"]),
   },
+  
   mounted() {
-    this.getUsers();
+    this.getUsers(this.$route.query);
   },
 };
 </script>
@@ -63,7 +75,7 @@ export default {
     height: max-content;
     min-height: 100%;
 }
-.product {
-  @apply py-2 px-3 my-2 border-b border-green-300 bg-green-100;
+.detail-box {
+  @apply py-2 px-3 my-2 w-full border-b border-green-300 bg-green-100;
 }
 </style>

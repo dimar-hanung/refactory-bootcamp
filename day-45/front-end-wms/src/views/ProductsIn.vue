@@ -17,14 +17,18 @@
         </div>
       </post-modal>
       <print-report getUrl="print?type=in">Print In</print-report>
+       <select class="btn-lg" name="pagination" @input="changePage">
+        <option selected disabled>Page {{$route.query.page}}</option>
+        <option :value="index" v-for="index in productsIn.totalPages" :key="index">Page {{index}}</option>
+      </select>
     </div>
     <div>
       <div
-        class="product flex"
+        class="product block sm:flex"
         v-for="(product, id) in productsIn.data"
         :key="id"
       >
-        <div class="img-box">
+        <div v-if="showImage" class="img-box sm:mx-0 mx-auto">
           <img
             :src="product.Product.photo_url"
             :alt="product.Product.photo_url"
@@ -94,13 +98,21 @@ export default {
   },
   methods: {
     ...mapActions("Auth", ["getProductsIn","deleteProductIn"]),
+     changePage(e){
+      const val = e.target.value
+      const qroute = this.$route.query;
+      if(!qroute.limit) qroute.limit = 5
+      this.$router.push(`/products/in?limit=${qroute.limit}&page=${val}`)
+      this.getProductsIn(this.$route.query);
+    }
   },
   computed: {
+    ...mapState("Settings", ["showImage"]),
     ...mapState("Auth", ["productsIn"]),
   },
   mounted() {
     // console.log(from)
-    this.getProductsIn();
+    this.getProductsIn(this.$route.query);
   },
 };
 </script>

@@ -1,4 +1,5 @@
 import Vue from "vue";
+import Vuex from 'vuex'
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
@@ -17,7 +18,7 @@ Vue.use(VueToast, {
   duration:5000
 })
 Vue.$toast.open('Selamat Datang...');
-
+Vue.use(Vuex)
 document.documentElement.setAttribute("class",`theme-${localStorage.getItem("theme")} text-inverse`)
 library.add(fas)
 

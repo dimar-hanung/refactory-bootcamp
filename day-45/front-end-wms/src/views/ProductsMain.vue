@@ -37,7 +37,7 @@
       v-for="(product, id) in products.data.data"
       :key="id"
     >
-      <div class="img-box sm:mx-0 mx-auto">
+      <div v-if="showImage" class="img-box sm:mx-0 mx-auto">
         <img :src="product.photo_url" :alt="product.photo_url" />
       </div>
       <div class="detail-box mx-auto">
@@ -127,6 +127,7 @@ export default {
   computed: {
     // ...mapState("Auth", ["products", "productsIn", "productsOut"]),
     ...mapState("Auth", ["products"]),
+    ...mapState("Settings",["showImage"])
   },
   mounted() {
     // console.log(from)
