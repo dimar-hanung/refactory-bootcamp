@@ -2,7 +2,10 @@ const Setting = {
   namespaced: true,
   state: () => ({
     showImage: true,
-    toastActive:{}
+    toastActive:{
+      err:true,
+      res_err:true
+    }
   }),
   mutations: {
     imageVisibility(state) {

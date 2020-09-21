@@ -8,7 +8,7 @@
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input v-model="dataUser.password" name="password" id="password" type="text" />
+        <input v-model="dataUser.password" name="password" id="password" type="password" />
       </div>
       <div class="form-group">
         <label for="password">Full Name</label>
