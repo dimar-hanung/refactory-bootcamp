@@ -1,7 +1,8 @@
 # Try Out VueJS - WMS
 
 ## Before Deadline
--
+Mon Sep 21 08:31:09 2020 +0700
+- https://github.com/dimar-hanung/refactory-bootcamp/tree/1b50828/day-45
 
 ## Live Demo
 - Firebase: https://dimar-vue-front-wms.web.app - Up To Date - Forever
