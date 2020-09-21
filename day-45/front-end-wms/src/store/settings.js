@@ -2,49 +2,34 @@ const Setting = {
   namespaced: true,
   state: () => ({
     showImage: true,
-    toastActive:true
+    toastActive:{}
   }),
   mutations: {
     imageVisibility(state) {
       state.showImage = !state.showImage;
     },
-    toastToggle(state) {
-        state.toastActive = !state.toastActive
+    toastToggle(state,payload) {
+        state.toastActive[payload] = !state.toastActive[payload]
       },
   },
   actions: {
     imageVisibility({ commit }) {
       commit("imageVisibility");
     },
-    toastToggle({ commit }) {
-        commit("toastToggle");
+    toastToggle({ commit },payload) {
+        commit("toastToggle",payload);
       },
     selectTheme({ commit },theme) {
         {commit}
       const d = document.getElementsByTagName('body')[0];
-      // m = localStorage.getItem("theme");
-
-      if (theme == "light") {
-        d.setAttribute("class", "theme-light");
-        localStorage.setItem("theme", "light");
+      if (theme != "vue") {
+        d.setAttribute("class", `theme-${theme} text-inverse`);
+        localStorage.setItem("theme", theme);
       }
-      if (theme == "dark") {
-        d.classList.add("theme-dark");
-        d.setAttribute("class", "theme-dark text-inverse");
-        localStorage.setItem("theme", "dark");
-      }
-      if (theme == "vue") {
+      else {
         d.setAttribute("class", "text-inverse");
         localStorage.removeItem("theme");
       }
-
-      // if (d.classList.contains("theme-light")) {
-      //   d.classList.remove("theme-light");
-      //   localStorage.removeItem("theme");
-      // } else {
-      //   d.classList.add("theme-light");
-      //   localStorage.setItem("theme", "light");
-      // }
     },
   },
 };

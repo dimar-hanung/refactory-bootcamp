@@ -80,7 +80,7 @@ const Auth = {
     // ==================== Get Products ================================
     async getProducts({ commit }, query = { limit: 5 }) {
       console.log(query);
-      Api.get(`/product`, {
+     await Api.get(`/product`, {
         params: query,
         headers: { Authorization: `bearer ${localStorage.getItem("token")}` },
       })
@@ -88,7 +88,7 @@ const Auth = {
         .catch((error) => console.log({ error }));
     },
     async getProductsIn({ commit }, query = { limit: 5 }) {
-      Api.get("/in", {
+      await Api.get("/in", {
         params: query,
         headers: { Authorization: `bearer ${localStorage.getItem("token")}` },
       })
@@ -96,7 +96,7 @@ const Auth = {
         .catch((error) => console.log({ error }));
     },
     async getProductsOut({ commit }, query = { limit: 5 }) {
-      Api.get("/out", {
+      await Api.get("/out", {
         params: query,
         headers: { Authorization: `bearer ${localStorage.getItem("token")}` },
       })
@@ -104,7 +104,7 @@ const Auth = {
         .catch((error) => console.log({ error }));
     },
     async getProductId({ commit }, payload) {
-      Api.get(`product/${payload}`)
+     await Api.get(`product/${payload}`)
         .then((res) => commit("setProductId", res.data.data))
         .catch((error) => console.log({ error }));
     },
@@ -149,7 +149,7 @@ const Auth = {
 
     // ==================== xxx Del Product xxx ================================
     async getUsers({ commit }, query = { limit: 5 }) {
-      Api.get(`user`,{
+      await Api.get(`user`,{
         params: query,
       })
         .then((res) => commit("setUsers", res.data.data))

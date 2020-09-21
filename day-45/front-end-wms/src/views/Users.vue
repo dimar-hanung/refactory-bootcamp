@@ -1,12 +1,12 @@
 <template>
-  <div class="container wrap">
+  <div class="container wrap" v-if="loading">
      
     <div class="list-box">
         <select class="btn-lg" name="pagination" @input="changePage">
         <option selected disabled>Page {{$route.query.page}}</option>
         <option :value="index" v-for="index in users.totalPages" :key="index">Page {{index}}</option>
       </select>
-        <div class="product flex" v-for="(user, id) in users.data" :key="id">
+        <div class="flex" v-for="(user, id) in users.data" :key="id">
           <div class="detail-box">
             <table>
               <tr>
@@ -49,6 +49,11 @@
 <script>
 import { mapState, mapActions } from "vuex";
 export default {
+  data() {
+    return {
+      loading: false
+    }
+  },
   methods: {
     ...mapActions("Auth", ["getUsers"]),
     changePage(e){
@@ -63,8 +68,9 @@ export default {
     ...mapState("Auth", ["users"]),
   },
   
-  mounted() {
-    this.getUsers(this.$route.query);
+  async created() {
+    await this.getUsers(this.$route.query);
+    this.loading = true
   },
 };
 </script>

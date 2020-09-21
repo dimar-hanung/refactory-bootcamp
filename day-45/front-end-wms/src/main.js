@@ -20,7 +20,7 @@ Vue.use(VueToast, {
 Vue.$toast.open('Selamat Datang...');
 Vue.use(Vuex)
 Vue.config.silent = true
-document.documentElement.setAttribute("class",`theme-${localStorage.getItem("theme")} text-inverse`)
+document.getElementsByTagName('body')[0].setAttribute("class",`theme-${localStorage.getItem("theme")} text-inverse`)
 library.add(fas)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

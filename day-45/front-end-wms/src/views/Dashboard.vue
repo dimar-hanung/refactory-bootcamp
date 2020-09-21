@@ -1,5 +1,8 @@
 <template>
-  <div class="dashboard bg-green-100">
+  <div
+    class="dashboard bg-green-100"
+    v-if="loading"
+  >
     <div class="box-wrap w-full mx-auto text-center">
       <router-link to="/products/main">
         <div class="box-item">
@@ -19,8 +22,13 @@
           <div class="font-bold">{{ productsOut.totalItems }}</div>
         </div>
       </router-link>
+      <router-link to="/users">
+        <div class="box-item">
+          <div>Total User</div>
+          <div class="font-bold">{{ users.totalItems }}</div>
+        </div>
+      </router-link>
     </div>
-    
   </div>
 </template>
 
@@ -28,22 +36,30 @@
 import { mapActions, mapState } from "vuex";
 
 export default {
+  data() {
+    return {
+      loading: false
+    }
+  },
   methods: {
-    ...mapActions("Auth", ["getProducts", "getProductsIn", "getProductsOut","getUsers"]),
-    
+    ...mapActions("Auth", [
+      "getProducts",
+      "getProductsIn",
+      "getProductsOut",
+      "getUsers",
+    ]),
+ 
   },
   computed: {
-    ...mapState("Auth", ["products", "productsIn", "productsOut"]),
+    ...mapState("Auth", ["products", "productsIn", "productsOut", "users"]),
   },
-  mounted() {
-    // console.log(from)
-    if(localStorage.getItem("firstLogin") != "1"){
-      localStorage.setItem("firstLogin","1")
-    }
-    this.getProducts({limit:1});
-    this.getProductsIn({limit:1});
-    this.getProductsOut({limit:1});
-    this.getUsers({limit:1});
+  async created() {
+    await this.getProducts({ limit: 1 });
+      await this.getProductsIn({ limit: 1 });
+      await this.getProductsOut({ limit: 1 });
+      await this.getUsers({ limit: 1 })
+      .then(()=>this.loading = true)
+      this.loading = true;
   },
 };
 </script>

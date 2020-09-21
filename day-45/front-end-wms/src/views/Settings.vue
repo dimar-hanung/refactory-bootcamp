@@ -9,15 +9,21 @@
       <div class="list-box">
         <div class="settings-box">
           <div class="font-bold">Theme</div>
-          <div class="flex margin-btn">
-            <button id="theme-btn" class="btn-lg" @click="selectTheme('light')">
+          <div class="flex flex-wrap margin-btn">
+            <button class="btn-lg mt-2" @click="selectTheme('light')">
               Light
             </button>
-            <button id="theme-btn" class="btn-lg" @click="selectTheme('dark')">
-              dark
+            <button class="btn-lg mt-2" @click="selectTheme('dark')">
+              Dark
             </button>
-            <button id="theme-btn" class="btn-lg" @click="selectTheme('vue')">
-              vue
+            <button class="btn-lg mt-2" @click="selectTheme('vue')">
+              Vue
+            </button>
+            <button class="btn-lg mt-2" @click="selectTheme('red')">
+              Red
+            </button>
+            <button class="btn-lg mt-2" @click="selectTheme('blue')">
+              Blue
             </button>
           </div>
         </div>
@@ -25,12 +31,33 @@
           <div class="font-bold">General</div>
           <div>
             <input
-              id="alertCheck"
-              @input="toastToggle"
+              id="successMessage"
+              @input="toastToggle('res')"
               type="checkBox"
-              :checked="toastActive"
+              :checked="toastActive['res']"
             />
-            <label for="alertCheck">Show Toast After Request</label>
+            
+            <label for="successMessage">Show Success Message</label>
+          </div>
+          <div>
+            <input
+              id="errMessage"
+              @input="toastToggle('err')"
+              type="checkBox"
+              :checked="toastActive['err']"
+            />
+            
+            <label for="errMessage">Show Error Message</label>
+          </div>
+          <div>
+            <input
+              id="resErrMessage"
+              @input="toastToggle('res_err')"
+              type="checkBox"
+              :checked="toastActive['res_err']"
+            />
+            
+            <label for="resErrMessage">Show Response Error Message</label>
           </div>
           <div>
             <input

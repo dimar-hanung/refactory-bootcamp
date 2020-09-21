@@ -33,11 +33,11 @@
         ><font-awesome-icon :icon="['fas', 'shopping-cart']" />
         Products</router-link
       >
-      <router-link to="/settings"
-        ><font-awesome-icon :icon="['fas', 'cog']" /> Setting</router-link
-      >
       <router-link to="/users?limit=5&page=1"
         ><font-awesome-icon :icon="['fas', 'user']" /> Users</router-link
+      >
+      <router-link to="/settings"
+        ><font-awesome-icon :icon="['fas', 'cog']" /> Setting</router-link
       >
       <a href="#" @click="userLogout"
         ><font-awesome-icon :icon="['fas', 'sign-out-alt']" /> Logout</a
@@ -65,10 +65,10 @@ export default {
       this.isSidebar = !this.isSidebar;
     },
     userLogout() {
-      if(!confirm(`Logout ${this.user.username} ?`)){
-        return false
+      if (!confirm(`Logout ${this.user.username} ?`)) {
+        return false;
       }
-      let keysToRemove = ["vuex", "user","token","randid"];
+      let keysToRemove = ["vuex", "user", "token", "randid"];
       for (let key of keysToRemove) {
         localStorage.removeItem(key);
       }
