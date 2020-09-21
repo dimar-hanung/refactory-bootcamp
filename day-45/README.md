@@ -1,5 +1,8 @@
 # Try Out VueJS - WMS
 
+## Before Deadline
+-
+
 ## Live Demo
 - Firebase: https://dimar-vue-front-wms.web.app - Up To Date - Forever
 - Heroku: https://dimar-front-wms-2.herokuapp.com/ - Up To Date until Deadline
@@ -42,7 +45,10 @@
 ## Problem
 - [ ] Pagination URL Bug
 - [ ] Beberapa Bug Styling tidak terduga
-- [ ] First Get Sering Bug
+- [x] First Get Sering Bug | 2020-09-21 08:29:48
+    ## Solution
+    Menggunakan async saat created dan menggunakan kondisi di templatenya jika await selesai baru render
+    
 
 # Langkah Pengerjaan
 
