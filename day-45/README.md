@@ -5,7 +5,7 @@ Mon Sep 21 08:31:09 2020 +0700
 - https://github.com/dimar-hanung/refactory-bootcamp/tree/1b50828/day-45
 
 ## Live Demo
-- Firebase: https://dimar-vue-front-wms.web.app - Up To Date - Forever
+- Firebase: https://dimar-vue-front-wms.web.app - Up To Date - Forever | Recommend to check :smile:
 - Heroku: https://dimar-front-wms-2.herokuapp.com/ - Up To Date until Deadline
 
 ## Note
@@ -47,7 +47,7 @@ Mon Sep 21 08:31:09 2020 +0700
 - [ ] Pagination URL Bug
 - [ ] Beberapa Bug Styling tidak terduga
 - [x] First Get Sering Bug | 2020-09-21 08:29:48
-    ## Solution
+    ### Solution
     Menggunakan async saat created dan menggunakan kondisi di templatenya jika await selesai baru render
     
 

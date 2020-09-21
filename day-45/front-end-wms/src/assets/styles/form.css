@@ -14,7 +14,7 @@
     place-items: center;
   }
   .form {
-    @apply border border-green-500 shadow-lg mx-auto;
+    @apply border border-green-500 bg-green-100 shadow-lg mx-auto;
     width: 326px;
     min-height: 395px;
     padding: 28px 36px;
