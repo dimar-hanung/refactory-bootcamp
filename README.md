@@ -36,17 +36,17 @@
 # Daftar Isi
 ## Minggu 1
 20 Juli 2020
-- day-1 = Bermain main dengan github
-- day-2 = Basic Javascript
-- day-3 = OOP
-- day-4 = Functional Programming Paradigm / Menuliskan program yg baik
-- day-5 = Basic NPM dan bermain dengan jestjs sebagai unit test
-## Minggu 2
+- day-01 = Bermain main dengan github
+- day-02 = Basic Javascript
+- day-03 = OOP
+- day-04 = Functional Programming Paradigm / Menuliskan program yg baik
+- day-05 = Basic NPM dan bermain dengan jestjs sebagai unit test
+## Min0ggu 2
 27 Juli 2020
-- day-6 = Membuat CLI Menggunakan Caporal
-- day-7 = Asyncrhonus dan Promise
-- day-8 = RDMS  ( mySQL + sequelize + Caporal )
-- day-9 = noSQL ( MongoDb + Mongoose + Caporal )
+- day-06 = Membuat CLI Menggunakan Caporal
+- day-07 = Asyncrhonus dan Promise
+- day-08 = RDMS  ( mySQL + sequelize + Caporal )
+- day-09 = noSQL ( MongoDb + Mongoose + Caporal )
 - day-10 = Liburrr 
 ## Minggu 3
 3 Agustus 2020
