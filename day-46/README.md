@@ -14,7 +14,8 @@
 - Kubernetes mengelola scalling (scalable) dan failover dari aplikasi container kamu, termasuk deployment patterns dll.
 
 ## Komponen Kubernetes
-![Kubernetes](https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg)
+<img src="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" width="500">
+
 ### Control Plane Components
 - kube-apiserver 
 - etcd 
@@ -23,8 +24,10 @@
 - cloud-controller-manager 
 
 ### Node Components
-![Node-Pods](https://d33wubrfki0l68.cloudfront.net/5cb72d407cbe2755e581b6de757e0d81760d5b86/a9df9/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg)
-Sebuah Pod selalu berjalan dalam sebuah Node.\
+<img src="https://d33wubrfki0l68.cloudfront.net/5cb72d407cbe2755e581b6de757e0d81760d5b86/a9df9/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg" width="500" >
+
+- Sebuah Pod selalu berjalan dalam sebuah Node.\
+- ❗ Pod menjalankan satu kontainer. Model satu kontainer per Pod adalah model yang umum digunakan di Kubernetes; kamu dapat membayangkan sebuah Pod sebagai pembungkus kontainer tersebut, dan Kubernetes tidak mengelola kontainer secara langsung tetapi mengelola Pod tersebut.
 Tiap Node Kuberbetes menjalankan setidaknya:\
 - Kubelet, satu proses yang bertanggung jawab untuk berkomunikasi antara control plane Kuberneter dan Node; ini juga mengelola Pod-Pod dan kontainer-kontainer yang berjalan di sebuah mesin.
 - Satu container runtime, seperti Docker, bertanggung jawab untuk menarik image kontainer dari register, membuka kontainer, dan menjalankan aplikasi.
