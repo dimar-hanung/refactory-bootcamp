@@ -31,7 +31,7 @@
 
     },
     ```
-2. Sublime Text 3 (Coming Soon)
+2. Sublime Text 3 (Coming Soon) <font color="red">Test</font>
 
 # Daftar Isi
 ## Minggu 1
@@ -91,8 +91,13 @@
 - day-39 = Tryout Python
 - day-40 = Shell Script Basic
 ## Minggu 9
-24 September 2020
+14 September 2020
 - day-41 = Mengulang Vuex
 - day-42 = Docker Images
 - day-43 = Docker Network
 - day-44 = Docker Compose
+- day-45 = TO Vue JS
+## Minggu 10
+21 September 2020
+- day-46 = Kubernetes, Kubectl, Minikube
+- day-47 = Kubernetes, Kubectl, Minikube
