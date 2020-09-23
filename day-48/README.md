@@ -21,7 +21,7 @@ membuat sebuah aplikasi kubernates yang bisa di akses melalui
     ```
     minikube ip
     ```
-    Karena saya menggunakan windows, dan saya mendapat ip `192.168.99.100` yang sudah di setting oleh saya sebelum nya, maka cek service ada di ip tersebut
+    Karena saya menggunakan windows, dan saya mendapat ip `192.168.99.100` yang sudah di setting oleh saya sebelum nya di virtual box, maka cek service ada di ip tersebut
 4. Cek Service\
 Akses http://192.168.99.100:30001 pada browser
 
