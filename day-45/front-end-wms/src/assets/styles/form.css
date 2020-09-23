@@ -1,5 +1,5 @@
 .form-group input {
-    @apply shadow p-1 text-black;
+    @apply shadow p-1 text-inverse bg-green-100 border border-green-500;
     width: 100%;
   }
   .login {

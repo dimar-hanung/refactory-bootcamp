@@ -17,22 +17,22 @@
       <div class="mx-auto">
         <div class="w-full max-w-xs mx-auto mt-8">
           <form
-            class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            class="bg-green-100 shadow-md rounded px-8 pt-6 pb-8 mb-4"
             @submit.prevent="onSubmit"
           >
-            <h1 class="text-gray-700 font-bold mt-4 mb-8 text-xl">
+            <h1 class="text-inverse font-bold mt-4 mb-8 text-xl">
               <slot name="title"></slot>
             </h1>
 
             <slot name="form-list"></slot>
             <input
               type="submit"
-              class="bg-white border border-blue-500 hover:bg-blue-500 hover:text-white text-blue-500 w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              class="bg-green-100 border border-green-500 hover:bg-green-200 cursor-pointer text-inverse w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               value="submit"
             />
             <div class="mt-4">
               <button
-                class="text-blue-500 text-center font-bold"
+                class="text-inverse text-center font-bold hover:bg-green-200 p-2 rounded"
                 style="transition: all .15s ease"
                 v-on:click="toggleModal()"
               >

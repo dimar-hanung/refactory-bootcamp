@@ -14,7 +14,7 @@
       <input class="submit" type="submit" value="Sign In" />
       <div class="my-2 text-left">
         Belum punya akun?
-        <router-link to="register" class="text-blue-500 font-bold"
+        <router-link to="register" class="text-inverse font-bold"
           >Register</router-link
         >
       </div>
