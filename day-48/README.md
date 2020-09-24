@@ -1,11 +1,14 @@
 # Kubernetes
+## Before Deadline
+https://github.com/dimar-hanung/refactory-bootcamp/tree/a98f5ad/day-48
+
 ## Main Task
 membuat sebuah aplikasi kubernates yang bisa di akses melalui
 - [x] nodeport
 - [x] loadbalancer
-- [ ] ingress
+- [x] ingress
 ## Problem
-- [ ] Menambah Hosts Kubernetes pada windows
+- [x] Menambah Hosts Kubernetes pada windows
 
 ## How To Run
 ### nodeport.yaml
@@ -44,7 +47,46 @@ Akses http://192.168.99.100:30001 pada browser
     ```
 
 ### ingress.yaml
-Not Yet
+1. Cek Ingress
+    ```bash
+    minikube addons list
+    ```
+2. Apabila belum aktif maka aktifkan
+    ```bash
+    minikube addons enable ingress
+    ```
+3. cek ingress-nginx-controller
+    ```bash
+    kubectl get pods --namespace kube-system
+    ```
+4. Buat Service
+    ```bash
+    kubectl create -f ingress.yaml
+    ```
+5. Untuk melihat proses sudah running atau belum
+    ```bash
+    kubectl get all --show-labels
+    ```
+6. Dapatkan info ingress
+    ```bash
+    kubectl get ingresses
+    ```
+7. Tambahkan Hosts
+    - Tambahkan baris pada file hosts:
+        ```bash
+        192.168.99.100 nginx.dimar.local
+        ```
+    - Path file hosts Windows: 
+        ```
+        C:\Windows\System32\drivers\etc
+        ```
+    - Path file hosts Linux
+        ```bash
+        /etc/hosts
+        ```
+8. Buka nginx.dimar.local
+
+
 
 ## API Kubernetes
 ### Field yang dibutuhkan
