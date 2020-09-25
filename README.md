@@ -102,3 +102,5 @@
 - `day-46` Kubernetes, Kubectl, Minikube
 - `day-47` Kubernetes, Kubectl, Minikube
 - `day-48` Kubernetes, ingress, nodeport, loadbalancer
+- `day-49` Kubernetes, Expose
+- `day-50` Deployment Kubernetes
