@@ -23,6 +23,17 @@ https://dimar-vuex-cart.web.app/
 - [ ] Detail
 - [ ] Responsive
 
+## vscode config for tailwind
+1. extension\
+[Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+1. vscode config
+    ```json
+    "tailwindCSS.includeLanguages": {
+        "plaintext": "html"
+    },
+    "css.validate": false,
+    ```
+
 ## Tailwindcss Intall
 1. Install Tailwindcss
     ```
