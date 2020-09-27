@@ -104,3 +104,5 @@
 - `day-48` Kubernetes, ingress, nodeport, loadbalancer
 - `day-49` Kubernetes, Expose
 - `day-50` Deployment Kubernetes
+## Minggu 11 - END 😄❤️
+Real Project selama 3 minggu 😄
