@@ -16,28 +16,23 @@ Aku sayang sekali
 Doraemon
 
 La... la... la...
-Aku sayang sekali`
+Aku sayang sekali`;
 
+const countWord = (data, ...keys) => {
+  keys = keys.map(w => w.toLowerCase());
+  let obj = {};
 
-const countWord = (data,...word) => {
-    word = word.map(w => w.toLowerCase())
-    //console.log(word)
-    let obj = {}
+  const words = data.split("\n").join(" ").split(" ");
 
-    data = data.split('\n').join(' ').split(' ');
-    // console.log(data)
-    data.forEach(data => {
-        word.forEach(word => {
-            
-            if(word.toLowerCase() == data.toLowerCase()){
-               obj[word] == undefined ?  obj[word] = 1 :  obj[word]++;
-            }
+  for (word of words) {
+    for (key of keys) {
+      if (key.toLowerCase() == word.toLowerCase()) {
+        obj[key] ? obj[key]++ : (obj[key] = 1);
+      }
+    }
+  }
 
-        });
-        
-    });
+  return obj;
+};
 
-    console.log(obj)
-}
-
-countWord(data,"aku","ingin","dapat")
+console.log(countWord(data, "aku", "ingin", "dapat"));

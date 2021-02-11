@@ -9,7 +9,7 @@ class Str {
     return words.toUpperCase();
   }
   capitalize(words) {
-    return words.replace(/(^\w{1})|(\s{1}\w{1})/g, (match) =>
+    return words.replace(/(^\w{1})|(\s{1}\w{1})/g, match =>
       match.toUpperCase()
     );
   }
@@ -22,10 +22,10 @@ class Str {
     if (match instanceof Array) {
       for (let i in match) {
         if (words.indexOf(match[i]) !== -1) return true;
-        else return false
+        else return false;
       }
-    }else{
-        return words.indexOf(match) !== -1 ?  true : false
+    } else {
+      return words.indexOf(match) !== -1 ? true : false;
     }
   }
 
@@ -54,8 +54,7 @@ class Str {
     return words.split(" ").length;
   }
   trim(words, count = 100, seperator = "...") {
-    if (words.length > count)
-      words = words.slice(0, count) + seperator;
+    if (words.length > count) words = words.slice(0, count) + seperator;
 
     return words;
   }
@@ -76,7 +75,7 @@ let obj = {
   upper: str.upper("malam"),
   capitalize: str.capitalize("saya ingin makan"),
   reverse: str.reverse("kasur"),
-  contains: str.contains("Saya ingin makan sate", ["sate","rujak"]),
+  contains: str.contains("Saya ingin makan sate", ["sate", "rujak"]),
   random: str.random(50),
   slug: str.slug(
     "JavaScript, TypeScript & Dart -     Bahasa mana yang akan populer di 2018?"
@@ -84,6 +83,6 @@ let obj = {
   count: str.count("lorem ipsum"),
   countWords: str.countWords("lorem ipsum"),
   trim: str.trim(text),
-  trimWords: str.trimWords(text,4),
+  trimWords: str.trimWords(text, 4)
 };
 console.log(obj);
